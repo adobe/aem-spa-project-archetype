@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/test-spa-angular-project"/>
+    <filter root="/conf/test-spa-angular-project"/>
+    <filter root="/content/test-spa-angular-project"/>
+</workspaceFilter>
