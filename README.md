@@ -74,6 +74,8 @@ $ mvn archetype:generate \
      -DarchetypeVersion=1.0.0-SNAPSHOT \
 ```
 
+Please note that properties declared in [archetype-metadata.xml](src/main/resources/META-INF/maven/archetype-metadata.xml) with `defaultValue` are not asked during interactive mode and are defaulted to suggested values. 
+
 ### Creating project in batch mode
 
 In batch mode all the required parameters muse be set via `-Dparameter=value` argument.
