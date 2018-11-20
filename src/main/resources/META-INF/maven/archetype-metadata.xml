@@ -47,8 +47,8 @@
     <requiredProperties>
         <!-- Project name is used for building AEM apps path, content path, conf etc. -->
         <requiredProperty key="projectName">
-            <validationRegex>^[a-zA-Z0-9\-_]+$</validationRegex>
-            <defaultValue>my-sample-spa</defaultValue>
+            <validationRegex>^[a-zA-Z0-9\_]+$</validationRegex>
+            <defaultValue>mysamplespa</defaultValue>
         </requiredProperty>
         <!-- Project title - descriptive project name -->
         <requiredProperty key="projectTitle">

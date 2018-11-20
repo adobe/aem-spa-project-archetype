@@ -29,7 +29,7 @@ This archetype requires following parameters:
 - `artifactId`(default is `${groupId}.${projectName}`) - Maven artifact "root" artifactId, is suffixed for the individual modules
 - `version` (default is `1.0.0-SNAPSHOT`) - Maven artifact version
 - `package` (default is `${groupId}.${projectName}`) - Java class package name
-- `projectName` (default is `my-sample-spa`) - Used for building AEM apps path, content path, conf etc. Should not include spaces or special character.
+- `projectName` (default is `mysamplespa`) - Used for building AEM apps path, content path, conf etc. Should not include spaces or special character.
 - `projectTitle` (default is `My Sample SPA`) - Descriptive project name
 - `componentGroup` (default is `${projectTitle}`) - Name of the component group in AEM Editor
 - `optionFrontend` (default is `react`) - Type of frontent project, allowed options: either angular or react
@@ -37,7 +37,6 @@ This archetype requires following parameters:
 ## Building SPA Starter Kit Archetype
 
 ```
-$ cd maven-archetype-spa-starter-kit/
 $ mvn clean install archetype:update-local-catalog
 ```
 
@@ -57,6 +56,8 @@ Depending on the use case maven can use different archetype variant (use `-Darch
 ## Using SPA Starter Kit Archetype
 
 Archetype `aem-spa-project-archetype` must be available locally (by cloning this repo and building it) or on artifactory.
+
+You must be in a directory without a `pom.xml` file. A sub-folder will be created for the newly created project.
 
 Starter Kit project can be created using following options:
 - in command line in **interactive** mode
