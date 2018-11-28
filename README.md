@@ -10,13 +10,13 @@ It is recommended to set up the local AEM instances with `nosamplecontent` run m
 
 Modules of the generated project is defined in [src/main/resources/archetype-resources](src/main/resources):
 
-* [bundles/core](bundles/core/): OSGi bundle containing:
+* [core](core/): OSGi bundle containing:
   * Java classes (e.g. Sling Models, Servlets, business logic)
-* [content/jcr_root/apps](content/jcr_root/apps/):
+* [ui.apps/src/main/content/jcr_root/apps](content/jcr_root/apps/):
   * AEM components with their scripts and dialog definitions
-* [content/jcr_root/conf](content/jcr_root/conf/): 
+* [ui.content/src/main/content/jcr_root/conf](content/jcr_root/conf/): 
   * AEM content package with editable templates stored at `/conf`
-* [content/jcr_root/content](content/jcr_root/content/): 
+* [ui.content/src/main/content/jcr_root/content](content/jcr_root/content/): 
   * AEM content package containing sample content (for development and test purposes)
 * [angular-app](angular-app/): Angular application in case frontend chosen is set to be "angular" at project generation 
 * [react-app](react-app/): React application in case frontend chosen is set to be "react" at project generation 

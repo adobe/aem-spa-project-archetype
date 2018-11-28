@@ -15,27 +15,42 @@
 -->
 <archetype-descriptor name="basic">
     <fileSets>
+        <fileSet encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>.gitignore</include>
+            </includes>
+        </fileSet>
         <fileSet filtered="true" packaged="false">
-            <directory>bundles/core</directory>
+            <directory>core</directory>
             <includes>
                 <include>pom.xml</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" packaged="true">
-            <directory>bundles/core/src/main/java</directory>
+            <directory>core/src/main/java</directory>
         </fileSet>
         <fileSet filtered="true" packaged="true">
-            <directory>bundles/core/src/test/java</directory>
+            <directory>core/src/test/java</directory>
         </fileSet>
         <fileSet filtered="true" packaged="false">
-            <directory>bundles/core/src/test/resources</directory>
+            <directory>core/src/test/resources</directory>
         </fileSet>
 
         <fileSet filtered="true" packaged="false">
             <directory>all</directory>
         </fileSet>
         <fileSet filtered="true" packaged="false">
-            <directory>content</directory>
+            <directory>ui.apps</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory>ui.content</directory>
         </fileSet>
         <fileSet filtered="true" packaged="false">
             <directory>react-app</directory>

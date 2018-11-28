@@ -1,9 +1,6 @@
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
 def optionFrontend = request.getProperties().get("optionFrontend")
-def appsPackage = new File(rootDir, "content/jcr_root/apps/${projectName}")
-
-// rename according submodule as there will be only one frontend project left
-assert new File(rootDir, "${optionFrontend}-app").renameTo(new File(rootDir, "app"))
+def appsPackage = new File(rootDir, "ui.apps/src/main/content/jcr_root/apps/${projectName}")
 
 // rename body render script in page component
 assert new File(appsPackage, "components/page/body_${optionFrontend}.html")
@@ -11,8 +8,13 @@ assert new File(appsPackage, "components/page/body_${optionFrontend}.html")
 
 
 // Cleanup sub modules
-new File(rootDir, "angular-app").deleteDir()
-new File(rootDir, "react-app").deleteDir()
+if ("angular".equals(optionFrontend)) {
+    new File(rootDir, "react-app").deleteDir()
+}
+
+if ("react".equals(optionFrontend)) {
+    new File(rootDir, "angular-app").deleteDir()
+}
 
 // Cleanup files
 new File(appsPackage, "components/page/body_angular.html").delete()

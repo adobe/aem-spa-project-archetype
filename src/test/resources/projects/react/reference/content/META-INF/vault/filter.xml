@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<workspaceFilter version="1.0">
-    <filter root="/apps/test-spa-react-project"/>
-    <filter root="/conf/test-spa-react-project"/>
-    <filter root="/content/test-spa-react-project"/>
-</workspaceFilter>

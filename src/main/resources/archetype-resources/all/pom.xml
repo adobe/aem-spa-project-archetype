@@ -21,9 +21,9 @@
     <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>$groupId</groupId>
-        <artifactId>$artifactId</artifactId>
-        <version>$version</version>
+        <groupId>${groupId}</groupId>
+        <artifactId>${artifactId}</artifactId>
+        <version>${version}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -31,7 +31,7 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>${artifactId}-all</artifactId>
+    <artifactId>${artifactId}.all</artifactId>
     <packaging>content-package</packaging>
     <version>${version}</version>
 
@@ -59,15 +59,20 @@
 
                     <embeddeds>
                         <embedded>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>${artifactId}-core</artifactId>
+                            <groupId>${groupId}</groupId>
+                            <artifactId>${artifactId}.core</artifactId>
                             <filter>true</filter>
                         </embedded>
                     </embeddeds>
                     <subPackages>
                         <subPackage>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>${artifactId}-content</artifactId>
+                            <groupId>${groupId}</groupId>
+                            <artifactId>${artifactId}.ui.apps</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
+                        <subPackage>
+                            <groupId>${groupId}</groupId>
+                            <artifactId>${artifactId}.ui.content</artifactId>
                             <filter>true</filter>
                         </subPackage>
                     </subPackages>
@@ -140,14 +145,22 @@
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>${artifactId}-core</artifactId>
+            <artifactId>${artifactId}.core</artifactId>
             <version>${version}</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>${artifactId}-content</artifactId>
+            <artifactId>${artifactId}.ui.apps</artifactId>
+            <version>${version}</version>
+            <type>zip</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${artifactId}.ui.content</artifactId>
             <version>${version}</version>
             <type>zip</type>
             <scope>provided</scope>

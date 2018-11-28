@@ -18,7 +18,7 @@ module.exports = {
     context: __dirname,
 
     // path to the clientlib root folder (output)
-    clientLibRoot: "./../content/jcr_root/apps/${projectName}/clientlibs",
+    clientLibRoot: "./../ui.apps/src/main/content/jcr_root/apps/${projectName}/clientlibs",
 
     libs: {
         name: "${projectName}-${optionFrontend}",

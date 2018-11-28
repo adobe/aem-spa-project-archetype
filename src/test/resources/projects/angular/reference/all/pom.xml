@@ -31,7 +31,7 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>test-spa-angular-all</artifactId>
+    <artifactId>test-spa-angular.all</artifactId>
     <packaging>content-package</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
@@ -59,15 +59,20 @@
 
                     <embeddeds>
                         <embedded>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>test-spa-angular-core</artifactId>
+                            <groupId>com.adobe.spa.test.projects</groupId>
+                            <artifactId>test-spa-angular.core</artifactId>
                             <filter>true</filter>
                         </embedded>
                     </embeddeds>
                     <subPackages>
                         <subPackage>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>test-spa-angular-content</artifactId>
+                            <groupId>com.adobe.spa.test.projects</groupId>
+                            <artifactId>test-spa-angular.ui.apps</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
+                        <subPackage>
+                            <groupId>com.adobe.spa.test.projects</groupId>
+                            <artifactId>test-spa-angular.ui.content</artifactId>
                             <filter>true</filter>
                         </subPackage>
                     </subPackages>
@@ -140,14 +145,22 @@
     <dependencies>
         <dependency>
             <groupId>com.adobe.spa.test.projects</groupId>
-            <artifactId>test-spa-angular-core</artifactId>
+            <artifactId>test-spa-angular.core</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>com.adobe.spa.test.projects</groupId>
-            <artifactId>test-spa-angular-content</artifactId>
+            <artifactId>test-spa-angular.ui.apps</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>zip</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.adobe.spa.test.projects</groupId>
+            <artifactId>test-spa-angular.ui.content</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <type>zip</type>
             <scope>provided</scope>

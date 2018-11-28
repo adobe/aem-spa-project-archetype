@@ -33,9 +33,10 @@
     <!-- M O D U L E S                                                          -->
     <!-- ====================================================================== -->
     <modules>
-        <module>bundles/core</module>
-        <module>app</module>
-        <module>content</module>
+        <module>core</module>
+         <module>angular-app</module>
+                        <module>ui.apps</module>
+        <module>ui.content</module>
         <module>all</module>
     </modules>
 
@@ -44,6 +45,7 @@
     <!-- ====================================================================== -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <aem.host>localhost</aem.host>
         <aem.port>4502</aem.port>
@@ -59,8 +61,8 @@
         <sling.user>admin</sling.user>
         <sling.password>admin</sling.password>
 
-        <vault.package.group>adobe/aem640/sample</vault.package.group>
-        <vault.package.company>Adobe Systems Inc.</vault.package.company>
+        <vault.package.group>adobe/aem640/test-spa-angular-project</vault.package.group>
+        <vault.package.company>Adobe Inc.</vault.package.company>
         <vault.user>admin</vault.user>
         <vault.password>admin</vault.password>
 
@@ -106,7 +108,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.4</version>
+                <version>3.0.1</version>
                 <inherited>true</inherited>
             </plugin>
 
@@ -123,7 +125,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>2.5</version>
+                <version>3.0.2</version>
             </plugin>
 
             <!-- Maven Enforcer Plugin -->
@@ -139,11 +141,11 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>[2.2.1,)</version>
+                                    <version>[3.3.9,)</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <message>Project must be compiled with Java 6 or higher</message>
-                                    <version>1.6.0</version>
+                                    <message>Project must be compiled with Java 8 or higher</message>
+                                    <version>1.8.0</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
@@ -168,7 +170,7 @@
                 <artifactId>maven-idea-plugin</artifactId>
                 <version>2.2.1</version>
                 <configuration>
-                    <jdkLevel>1.6</jdkLevel>
+                    <jdkLevel>1.8</jdkLevel>
                     <linkModules>true</linkModules>
                     <downloadSources>true</downloadSources>
                 </configuration>
@@ -178,7 +180,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.9</version>
+                <version>2.10</version>
                 <configuration>
                     <downloadSources>true</downloadSources>
                 </configuration>
@@ -192,21 +194,21 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>2.6.1</version>
+                    <version>3.0.0</version>
                 </plugin>
 
                 <!-- Maven Resources Plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>2.7</version>
+                    <version>3.0.2</version>
                 </plugin>
 
                 <!-- Maven Compiler Plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.2</version>
+                    <version>3.6.1</version>
                 </plugin>
 
                 <!-- Apache Felix SCR Plugin -->
@@ -248,7 +250,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.18.1</version>
+                    <version>3.0.0-M1</version>
                     <configuration>
                         <!-- Workaround for https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=911925 -->
                         <useSystemClassLoader>false</useSystemClassLoader>
@@ -259,7 +261,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>2.18.1</version>
+                    <version>3.0.0-M1</version>
                 </plugin>
 
                 <!-- Maven Deploy Plugin -->
@@ -273,7 +275,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>maven-sling-plugin</artifactId>
-                    <version>2.1.0</version>
+                    <version>2.2.0</version>
                     <executions>
                         <execution>
                             <goals>
@@ -285,6 +287,23 @@
                         <slingUrl>${quickstart.url}/system/console/bundles</slingUrl>
                         <failOnError>true</failOnError>
                     </configuration>
+                </plugin>
+
+                <!-- HTL Maven Plugin -->
+                <plugin>
+                    <groupId>org.apache.sling</groupId>
+                    <artifactId>htl-maven-plugin</artifactId>
+                    <version>1.0.6</version>
+                    <configuration>
+                        <failOnWarnings>true</failOnWarnings>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>validate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <!-- Content Package Plugin -->
@@ -303,7 +322,7 @@
                 <plugin>
                     <groupId>org.apache.jackrabbit</groupId>
                     <artifactId>filevault-package-maven-plugin</artifactId>
-                    <version>1.0.0</version>
+                    <version>1.0.1</version>
                     <extensions>true</extensions>
                     <configuration>
                         <failOnMissingEmbed>true</failOnMissingEmbed>
@@ -331,7 +350,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.3.0</version>
                     <inherited>true</inherited>
                     <executions>
                         <execution>
@@ -361,21 +380,21 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>1.4</version>
+                    <version>1.4.1</version>
                 </plugin>
 
                 <!-- Maven Dependency Plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>2.10</version>
+                    <version>3.0.0</version>
                 </plugin>
 
                 <!-- Build Helper Maven Plugin -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>1.9.1</version>
+                    <version>3.0.0</version>
                 </plugin>
 
                 <!-- Build Number Maven Plugin -->
@@ -540,7 +559,7 @@
             <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
-                <version>6.3.1.2</version>
+                <version>6.4.2</version>
                 <classifier>apis</classifier>
                 <scope>provided</scope>
             </dependency>
@@ -642,6 +661,14 @@
                 <scope>provided</scope>
             </dependency>
 
+            <!-- Taglibs -->
+            <dependency>
+                <groupId>com.day.cq.wcm</groupId>
+                <artifactId>cq-wcm-taglib</artifactId>
+                <version>5.7.4</version>
+                <scope>provided</scope>
+            </dependency>
+
             <!-- Commons -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -670,7 +697,7 @@
             <dependency>
                 <groupId>com.adobe.cq</groupId>
                 <artifactId>core.wcm.components.core</artifactId>
-                <version>2.0.0</version>
+                <version>2.2.2</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -690,7 +717,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>1.10.19</version>
+                <version>2.7.22</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -726,7 +753,7 @@
             <dependency>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.testing.sling-mock</artifactId>
-                <version>2.2.14</version>
+                <version>2.2.18</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
