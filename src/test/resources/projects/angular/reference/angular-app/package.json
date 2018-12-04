@@ -13,9 +13,7 @@
     "test:ci": "scripts/ci/test.sh",
     "test:debug": "ng test --watch=true",
     "lint": "tslint ./src/**/*.ts -t verbose",
-    "e2e": "ng e2e",
-    "build:client-and-server-bundles": "ng build --build-optimizer=false && ng run angular-app:server",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
+    "e2e": "ng e2e"
   },
   "keywords": [],
   "author": "",

@@ -1,31 +1,30 @@
+
+You need to set the API_HOST configuration in [src/environments/environment.ts](https://github.com/adobe/aem-spa-project-archetype/blob/master/src/main/resources/archetype-resources/angular-app/src/environments
+/environment.ts#L22) pointing to your AEM instance:
+
+```API_HOST: "http://localhost:4502"```,
+
+Then:
+
 ```
-API_HOST=http://localhost:4502 npm run start
+npm run start
 ```
-This will open the local dev server on port 4200. You can navigate then to 
-http://localhost:4200/content/test-spa-angular-project/en/home.html
+This will open the local dev server on port 4200. You can navigate then to http://localhost:4200/content/test-spa-angular-project/en/home.html
 
 
-For now we need to overcome some technical difficulties in order to get the server actually working.
+Most probably this is due to CORS rejection, so you might want to either configure AEM to accept CORS or bypass it from the browser if you are doing local development.  
+Also assure that your request to the AEM instance is authorized.
 
-If you see that your requests are failing most probably the requests are not authorized.  
-You should modify the `PageModelManager#fetchModel` method to add the `Authorization` header:
-[here](https://www.npmjs.com/package/@adobe/cq-spa-page-model-manager)
-you should add the following header:
-```
-xhr.setRequestHeader('Authorization', 'Basic YWRtaW46YWRtaW4=');
-```
-Most probably the images are having relative paths, and because we are not on AEM they won't exist on this server.  
+* Instantiate a CustomModelClient such as [CustomModelClient.js](https://github.com/adobe/aem-spa-project-archetype/blob/master/src/main/resources/archetype-resources/angular-app/CustomModelClient.js) 
+when initializing the [ModelManager in src/app/app.component.ts](https://github.com/adobe/aem-spa-project-archetype/blob/master/src/main/resources/archetype-resources/angular-app/src/app/app.component.ts#L52)
+* If necessary adapt the Authorization header in [CustomModelClient.js](https://github.com/adobe/aem-spa-project-archetype/blob/master/src/main/resources/archetype-resources/angular-app/CustomModelClient.js#L20) 
+
+1. Navigate to the Configuration Manager on the AEM instance at http://localhost:4502/system/console/configMgr
+2. Look for the configuration: Adobe Granite Cross-Origin Resource Sharing Policy
+3. Create a new configuration with the following additional values:
+    * Allowed Origins: http://localhost:4200
+    * Supported Headers: Authorization
+    * Allowed Methods: OPTIONS
+    
+Most probably the images are having relative paths, and because we are not on AEM they won't exist on this server.
 Quick fix would be to force the AEM absolute path on the images from the image component
-
-Most probably this is due to CORS rejection, so you might want to either configure AEM to accept CORS or bypass it from
- the browser if you are doing local development.  
-**Also** make sure you login in AEM instance in the same browser.
-
-To enable the local server to serve the content, please proceed as follow:
-- Navigate to the Configuration Manager on the AEM instance http://localhost:4502/system/console/configMgr
-- Configuration name: Adobe Granite Cross-Origin Resource Sharing Policy
-  - ```Allowed Origins```: domain (ex: http://localhost:4502) or *
-  - ```Supported Headers```: Authorization
-  - ```Allowed Methods```: OPTIONS
-- Configure the authentication headers of your requests
-  - Instantiate the [angular-app/src/server/CustomModelClient.js](angular-app/src/server/CustomModelClient.js) when initializing the ModelManager in [angular-app/src/index.js](angular-app/src/index.js)
