@@ -42,8 +42,8 @@
     <!-- ====================================================================== -->
     <properties>
         <frontend-maven-plugin.version>1.6</frontend-maven-plugin.version>
-        <node.version>v8.12.0</node.version>
-        <npm.version>5.6.0</npm.version>
+        <node.version>v10.14.1</node.version>
+        <npm.version>6.4.1</npm.version>
     </properties>
 
     <!-- ====================================================================== -->
@@ -96,53 +96,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>npmLinkDeps</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <!-- Run NPM to generate the client library -->
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.6.0</version>
-                        <executions>
-                            <execution>
-                                <id>npm install</id>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <phase>initialize</phase>
-                                <configuration>
-                                    <executable>npm</executable>
-                                    <arguments>
-                                        <argument>run</argument>
-                                        <argument>install:link-deps</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>npm run build</id>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <phase>generate-resources</phase>
-                                <configuration>
-                                    <executable>npm</executable>
-                                    <arguments>
-                                        <argument>run</argument>
-                                        <argument>build</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>

@@ -34,6 +34,17 @@ const routes: Routes = [
       redirectTo: '/' + CONTEXT_PATH + 'content/test-spa-angular-project/en/home.html'
     },
     {
+        path: CONTEXT_PATH + 'content/test-spa-angular-project/fr/home.html',
+        component: MainContentComponent,
+        data: {
+            path: '/' + CONTEXT_PATH + 'content/test-spa-angular-project/fr/home'
+        }
+    },
+    {
+        path: CONTEXT_PATH +'content/test-spa-angular-project/fr.html',
+        redirectTo: '/' + CONTEXT_PATH + 'content/test-spa-angular-project/fr/home.html'
+    },
+    {
       path: '',
       redirectTo: '/' + CONTEXT_PATH + 'content/test-spa-angular-project/en/home.html',
       pathMatch: 'full'

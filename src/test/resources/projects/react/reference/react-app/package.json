@@ -3,7 +3,6 @@
   "version": "1.1.0",
   "private": true,
   "scripts": {
-    "install:link-deps": "npm install && npm link @adobe/cq-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && cd node_modules/@adobe/cq-react-editable-components && npm link @adobe/cq-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && cd -",
     "linter": "eslint --ext .js,.jsx .",
     "linter:fix": "eslint --ext .js,.jsx . --fix",
     "build": "npm run linter && webpack && clientlib",

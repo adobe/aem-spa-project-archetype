@@ -34,6 +34,17 @@ const routes: Routes = [
       redirectTo: '/' + CONTEXT_PATH + 'content/${projectName}/en/home.html'
     },
     {
+        path: CONTEXT_PATH + 'content/${projectName}/fr/home.html',
+        component: MainContentComponent,
+        data: {
+            path: '/' + CONTEXT_PATH + 'content/${projectName}/fr/home'
+        }
+    },
+    {
+        path: CONTEXT_PATH +'content/${projectName}/fr.html',
+        redirectTo: '/' + CONTEXT_PATH + 'content/${projectName}/fr/home.html'
+    },
+    {
       path: '',
       redirectTo: '/' + CONTEXT_PATH + 'content/${projectName}/en/home.html',
       pathMatch: 'full'
