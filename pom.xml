@@ -33,7 +33,7 @@
     <!-- S C M  D E F I N I T I O N                                             -->
     <!-- ====================================================================== -->
     <scm>
-        <connection>scm:git:https://github.com/adobe/aem-spa-project-archetype.git</connection>
+        <connection>scm:git:ssh://github.com/adobe/aem-spa-project-archetype.git</connection>
         <developerConnection>scm:git:git@github.com:adobe/aem-spa-project-archetype.git</developerConnection>
         <url>https://github.com/adobe/aem-spa-project-archetype/tree/master</url>
         <tag>HEAD</tag>
