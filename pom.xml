@@ -23,7 +23,7 @@
     <!-- ====================================================================== -->
     <groupId>com.adobe.cq.spa.archetypes</groupId>
     <artifactId>aem-spa-project-archetype</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>SPA Maven Archetype for AEM</name>
@@ -33,7 +33,7 @@
     <!-- S C M  D E F I N I T I O N                                             -->
     <!-- ====================================================================== -->
     <scm>
-        <connection>scm:git:https://github.com/adobe/aem-spa-project-archetype.git</connection>
+        <connection>scm:git:ssh://github.com/adobe/aem-spa-project-archetype.git</connection>
         <developerConnection>scm:git:git@github.com:adobe/aem-spa-project-archetype.git</developerConnection>
         <url>https://github.com/adobe/aem-spa-project-archetype/tree/master</url>
         <tag>HEAD</tag>
@@ -474,5 +474,26 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <!--
+    Deploy to the Maven Repositories using WebDAV URLs. This enables abstracting
+    the real location of the repositories and better access control. Finally
+    it mirrors read and write operations through the same mechanism.
+    NOTE: To use these dav: URLs, the WebDAV extension to Maven Wagon must
+    be declared in the build section above.
+-->
+    <distributionManagement>
+        <repository>
+            <id>${releaseRepository-Id}</id>
+            <name>${releaseRepository-Name}</name>
+            <url>${releaseRepository-URL}</url>
+        </repository>
+        <snapshotRepository>
+            <id>${snapshotRepository-Id}</id>
+            <name>${snapshotRepository-Name}</name>
+            <url>${snapshotRepository-URL}</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
