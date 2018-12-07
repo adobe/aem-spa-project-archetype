@@ -23,7 +23,7 @@
     <!-- ====================================================================== -->
     <groupId>com.adobe.cq.spa.archetypes</groupId>
     <artifactId>aem-spa-project-archetype</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>SPA Maven Archetype for AEM</name>
@@ -36,7 +36,7 @@
         <connection>scm:git:ssh://github.com/adobe/aem-spa-project-archetype.git</connection>
         <developerConnection>scm:git:git@github.com:adobe/aem-spa-project-archetype.git</developerConnection>
         <url>https://github.com/adobe/aem-spa-project-archetype/tree/master</url>
-        <tag>aem-spa-project-archetype-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <!-- ====================================================================== -->
