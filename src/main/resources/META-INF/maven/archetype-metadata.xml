@@ -1,0 +1,105 @@
+<!--
+| Copyright 2018 Adobe Incorporated
+|
+| Licensed under the Apache License, Version 2.0 (the "License");
+| you may not use this file except in compliance with the License.
+| You may obtain a copy of the License at
+|
+| http://www.apache.org/licenses/LICENSE-2.0
+|
+| Unless required by applicable law or agreed to in writing, software
+| distributed under the License is distributed on an "AS IS" BASIS,
+| WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+| See the License for the specific language governing permissions and
+| limitations under the License.
+-->
+<archetype-descriptor name="basic">
+    <fileSets>
+        <fileSet encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>.gitignore</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory>core</directory>
+            <includes>
+                <include>pom.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true">
+            <directory>core/src/main/java</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="true">
+            <directory>core/src/test/java</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory>core/src/test/resources</directory>
+        </fileSet>
+
+        <fileSet filtered="true" packaged="false">
+            <directory>all</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory>ui.apps</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory>ui.content</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory>react-app</directory>
+        </fileSet>
+        <fileSet filtered="true" packaged="false">
+            <directory>angular-app</directory>
+        </fileSet>
+    </fileSets>
+    <requiredProperties>
+        <!-- Project name is used for building AEM apps path, content path, conf etc. -->
+        <requiredProperty key="projectName">
+            <validationRegex>^[a-zA-Z0-9\_]+$</validationRegex>
+            <defaultValue>mysamplespa</defaultValue>
+        </requiredProperty>
+        <!-- Project title - descriptive project name -->
+        <requiredProperty key="projectTitle">
+            <defaultValue>My Sample SPA</defaultValue>
+        </requiredProperty>
+        <!-- Name of the component group -->
+        <requiredProperty key="componentGroup">
+            <defaultValue>${projectTitle}</defaultValue>
+        </requiredProperty>
+        <!-- Type of the frontend app project -->
+        <requiredProperty key="optionFrontend">
+            <validationRegex>^(angular|react)$</validationRegex>
+            <defaultValue>react</defaultValue>
+        </requiredProperty>
+        <!-- Maven artifact groupId for all projects -->
+        <requiredProperty key="groupId">
+            <validationRegex>^[a-zA-Z0-9\.\-_]+$</validationRegex>
+        </requiredProperty>
+        <!-- Maven artifact "root" artifactId, is suffixed for the individual modules -->
+        <requiredProperty key="artifactId">
+            <validationRegex>^[a-zA-Z0-9\.\-_]+$</validationRegex>
+            <defaultValue>${groupId}.${projectName}</defaultValue>
+        </requiredProperty>
+        <!-- Java class package name -->
+        <requiredProperty key="package">
+            <validationRegex>^[a-z0-9\.]+$</validationRegex>
+            <defaultValue>${groupId}.${projectName}</defaultValue>
+        </requiredProperty>
+        <!-- Maven artifact version - e.g. 1.0.0-SNAPSHOT -->
+        <requiredProperty key="version">
+            <validationRegex>^\d+(\.\d+){0,2}(\-SNAPSHOT)?$</validationRegex>
+            <defaultValue>1.0.0-SNAPSHOT</defaultValue>
+        </requiredProperty>
+        <!-- Required HTL replacements -->
+        <requiredProperty key="symbol_dollar">
+            <defaultValue>$</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+</archetype-descriptor>

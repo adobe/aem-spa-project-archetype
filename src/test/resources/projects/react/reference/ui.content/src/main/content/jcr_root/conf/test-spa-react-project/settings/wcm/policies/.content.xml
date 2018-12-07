@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <rep:policy/>
+    <components jcr:primaryType="nt:unstructured">
+        <page jcr:primaryType="nt:unstructured">
+            <jcr:content
+                jcr:primaryType="nt:unstructured"
+                mergeList="{Boolean}true"/>
+            <default
+                jcr:lastModified="{Date}2017-12-07T15:43:22.777+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Default policy of the page ((Test SPA React Project)"
+                sling:resourceType="wcm/core/components/policy/policy">
+                <jcr:content
+                    jcr:primaryType="nt:unstructured"
+                    mergeList="{Boolean}true"/>
+            </default>
+        </page>
+        <app jcr:primaryType="nt:unstructured">
+            <default
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Policy of the app ((Test SPA React Project)"
+                sling:resourceType="wcm/core/components/policy/policy"
+                clientlibs="[wcm.foundation.components.page.responsive]"
+                isRoot="{Boolean}true"
+                structureDepth="3"/>
+        </app>
+    </components>
+
+    <wcm jcr:primaryType="nt:unstructured">
+        <foundation jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <responsivegrid jcr:primaryType="nt:unstructured">
+                    <jcr:content
+                        jcr:primaryType="nt:unstructured"
+                        mergeList="{Boolean}true"/>
+                    <default
+                        jcr:lastModified="{Date}2017-12-07T15:43:22.777+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Template Root Policy (Test SPA React Project)"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:Test Spa ComponentGroup]">
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            mergeList="{Boolean}true"/>
+                    </default>
+                </responsivegrid>
+            </components>
+        </foundation>
+    </wcm>
+</jcr:root>
