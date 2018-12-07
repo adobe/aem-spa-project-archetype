@@ -475,4 +475,25 @@
         </dependency>
     </dependencies>
 
+    <!--
+    Deploy to the Maven Repositories using WebDAV URLs. This enables abstracting
+    the real location of the repositories and better access control. Finally
+    it mirrors read and write operations through the same mechanism.
+    NOTE: To use these dav: URLs, the WebDAV extension to Maven Wagon must
+    be declared in the build section above.
+-->
+    <distributionManagement>
+        <repository>
+            <id>${releaseRepository-Id}</id>
+            <name>${releaseRepository-Name}</name>
+            <url>${releaseRepository-URL}</url>
+        </repository>
+        <snapshotRepository>
+            <id>${snapshotRepository-Id}</id>
+            <name>${snapshotRepository-Name}</name>
+            <url>${snapshotRepository-URL}</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
