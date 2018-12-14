@@ -14,47 +14,40 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouteReuseStrategy, RouterModule, Routes, UrlMatchResult, UrlSegment } from '@angular/router';
+import { AemPageDataResolver, AemPageRouteReuseStrategy } from "@adobe/cq-angular-editable-components";
 import { MainContentComponent } from "./components/main-content/main-content.component";
 
-import { environment } from '../../src/environments/environment';
-
-const CONTEXT_PATH = environment.CONTEXT_PATH;
+export function AemPageMatcher(url: UrlSegment[]): UrlMatchResult {
+  if (url.length) {
+    return (
+      {
+        consumed: url,
+        posParams: {
+          path: url[url.length - 1]
+        }
+      }
+    );
+  }
+}
 
 const routes: Routes = [
-    {
-      path: CONTEXT_PATH + 'content/${projectName}/en/home.html',
-      component: MainContentComponent,
-      data: {
-        path: '/' + CONTEXT_PATH + 'content/${projectName}/en/home'
-      }
-    },
-    {
-      path: CONTEXT_PATH +'content/${projectName}/en.html',
-      redirectTo: '/' + CONTEXT_PATH + 'content/${projectName}/en/home.html'
-    },
-    {
-        path: CONTEXT_PATH + 'content/${projectName}/fr/home.html',
-        component: MainContentComponent,
-        data: {
-            path: '/' + CONTEXT_PATH + 'content/${projectName}/fr/home'
-        }
-    },
-    {
-        path: CONTEXT_PATH +'content/${projectName}/fr.html',
-        redirectTo: '/' + CONTEXT_PATH + 'content/${projectName}/fr/home.html'
-    },
-    {
-      path: '',
-      redirectTo: '/' + CONTEXT_PATH + 'content/${projectName}/en/home.html',
-      pathMatch: 'full'
+  {
+    matcher: AemPageMatcher,
+    component: MainContentComponent,
+    resolve: {
+      path: AemPageDataResolver
     }
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(
-      routes
-    )],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  providers: [AemPageDataResolver, {
+    provide: RouteReuseStrategy,
+    useClass: AemPageRouteReuseStrategy
+  }]
 })
+
 export class AppRoutingModule {}

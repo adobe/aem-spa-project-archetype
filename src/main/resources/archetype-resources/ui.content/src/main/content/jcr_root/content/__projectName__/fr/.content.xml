@@ -8,7 +8,8 @@
         cq:template="/conf/${projectName}/settings/wcm/templates/app-template"
         jcr:primaryType="cq:PageContent"
         jcr:title="Page Racine ${projectTitle} App"
-        sling:resourceType="${projectName}/components/app">
+        sling:resourceType="${projectName}/components/app"
+        cq:redirectTarget="/content/${projectName}/fr/home">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid"/>
