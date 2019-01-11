@@ -13,28 +13,11 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-module.exports = {
-    // default working directory (can be changed per 'cwd' in every asset option)
-    context: __dirname,
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-    // path to the clientlib root folder (output)
-    clientLibRoot: "./../ui.apps/src/main/content/jcr_root/apps/${projectName}/clientlibs",
-
-    libs: {
-        name: "${projectName}-${optionFrontend}",
-        allowProxy: true,
-        categories: ["${projectName}-${optionFrontend}"],
-        embed: ["${projectName}.responsivegrid"],
-        jsProcessor: ["min:gcc"],
-        serializationFormat: "xml",
-        assets: {
-            js: [
-                "build/static/**/*.js"
-            ],
-            css: [
-                "build/static/**/*.css"
-            ]
-        }
-    }
-};
-
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+});

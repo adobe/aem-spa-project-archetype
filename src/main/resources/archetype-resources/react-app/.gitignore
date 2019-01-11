@@ -28,3 +28,4 @@ out/
 
 # code coverage
 coverage/
+/coverage

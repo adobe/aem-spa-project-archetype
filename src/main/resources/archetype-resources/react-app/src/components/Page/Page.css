@@ -13,26 +13,8 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-{
-  "presets": ["env", "react", "stage-2"],
-  "plugins": [],
-  "env": {
-    "test": {
-      "plugins": [
-        [
-          "istanbul",
-          {
-            "include": [
-              "src/**.*"
-            ],
-            "exclude": [
-              "dist/**.*",
-              "node_modules/**.*",
-              "tests/**.*"
-            ]
-          }
-        ]
-      ]
-    }
-  }
+.page {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 12px;
 }

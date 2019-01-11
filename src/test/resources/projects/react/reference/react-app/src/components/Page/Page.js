@@ -17,6 +17,8 @@ import React from 'react';
 import {Page, MapTo, withComponentMappingContext } from "@adobe/cq-react-editable-components";
 import {withRoute} from './../../RouteHelper';
 
+require('./Page.css');
+
 // This component is a variant of a Page component mapped to the "test-spa-react-project/components/page" resource type
 // For now, the rendering is the same as the RootPage; this is more for illustration purposes
 class AppPage extends Page {
@@ -28,4 +30,4 @@ class AppPage extends Page {
     }
 }
 
-MapTo('test-spa-react-project/components/page')(withComponentMappingContext(AppPage));
+MapTo('test-spa-react-project/components/page')(withComponentMappingContext(withRoute(AppPage)));
