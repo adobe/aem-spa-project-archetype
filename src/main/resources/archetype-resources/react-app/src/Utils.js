@@ -13,8 +13,6 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-import {Constants} from '@adobe/cq-react-editable-components';
-
 /**
  * Extract an id from the cqModel field of given properties
  *

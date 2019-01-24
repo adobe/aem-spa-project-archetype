@@ -13,7 +13,6 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-import React from 'react';
 import {Page, MapTo, withComponentMappingContext } from "@adobe/cq-react-editable-components";
 import {withRoute} from './../../RouteHelper';
 

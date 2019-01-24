@@ -14,7 +14,6 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import React, {Component} from 'react';
-import {Constants} from '@adobe/cq-react-editable-components';
 import {Route} from 'react-router-dom';
 
 /**
