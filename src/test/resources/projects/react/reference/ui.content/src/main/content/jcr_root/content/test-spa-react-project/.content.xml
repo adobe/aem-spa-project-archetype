@@ -3,7 +3,6 @@
           jcr:primaryType="cq:Page">
     <jcr:content
         cq:allowedTemplates="[/conf/test-spa-react-project/settings/wcm/templates(/.*)]"
-        cq:deviceGroups="[/etc/mobile/groups/responsive]"
         jcr:primaryType="cq:PageContent"
         cq:conf="/conf/test-spa-react-project"
         jcr:title="Test SPA React Project"

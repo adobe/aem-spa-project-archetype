@@ -7,9 +7,6 @@
             "cq:conf"           : "/conf/coretest",
             "cq:lastModifiedBy" : "admin",
             "cq:lastModified"   : "Wed Jan 20 2016 10:33:36 GMT+0100",
-            "cq:deviceGroups"   : [
-                "/etc/mobile/groups/responsive"
-            ],
             "cq:template"       : "/conf/coretest/settings/wcm/templates/rootpagetemplate",
             "jcr:created"       : "Wed Jan 20 2016 10:29:36 GMT+0100",
             "jcr:createdBy"     : "admin",
