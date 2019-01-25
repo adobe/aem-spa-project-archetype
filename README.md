@@ -1,5 +1,9 @@
 ## Maven Archetype for SPA Starter Kit
 
+This archetype creates a minimal Adobe Experience Manager project as a starting point for your own SPA projects. The properties that must be provided when using this archetype allow to name as desired all parts of this project.
+
+See the [Getting Started with the AEM SPA Editor - WKND Events Tutorial](https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-spa-wknd-tutorial-develop.html) on the Adobe Help Center website for an example of how to use it.
+
 ## System requirements
 
 - [Java](https://www.java.com/en/download/) 1.8 or higher
