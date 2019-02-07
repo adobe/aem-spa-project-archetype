@@ -13,7 +13,40 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-@import "/libs/wcm/foundation/clientlibs/grid/grid_base.less";
 
-/* maximum amount of grid cells to be provided */
-@max_col: 12;
+ @import "/libs/wcm/foundation/clientlibs/grid/grid_base.less";
+
+ /* maximum amount of grid cells to be provided */
+ @max_col: 12;
+ 
+ /* default breakpoint */
+ .aem-Grid {
+     .generate-grid(default, @max_col);
+     width: auto;
+ }
+ 
+ /* phone breakpoint */
+ @media (max-width: 650px) {
+     .aem-Grid {
+         .generate-grid(phone, @max_col);
+     }
+ }
+ 
+ /* tablet breakpoint */
+ @media (min-width: 651px) and (max-width: 1200px) {
+     .aem-Grid {
+         .generate-grid(tablet, @max_col);
+     }
+ }
+ 
+ .aem-GridColumn {
+     padding: 0 15px;
+ }
+ 
+ /* TODO: find a better place for this */
+ /* additional styling for components in grid */ 
+ 
+ .aem-GridColumn.text.parbase p {
+     *padding: 0 20px;
+     text-align: justify;
+ }
