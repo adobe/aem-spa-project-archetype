@@ -57,6 +57,17 @@ Depending on the use case maven can use different archetype variant (use `-Darch
 - `local` represents `~/.m2/archetype-catalog.xml`
 - `remote` represents http://repo.maven.apache.org/maven2/archetype-catalog.xml
 
+## Provided Maven profiles
+The generated maven project support different deployment profiles when running the Maven install goal `mvn install` within the reactor.
+
+Id                        | Description
+--------------------------|------------------------------
+autoInstallBundle         | Install core bundle with the maven-sling-plugin to the felix console
+autoInstallPackage        | Install the ui.content and ui.apps content package with the content-package-maven-plugin to the package manager to default author instance on localhost, port 4502. Hostname and port can be changed with the aem.host and aem.port user defined properties. 
+autoInstallPackagePublish | Install the ui.content and ui.apps content package with the content-package-maven-plugin to the package manager to default publish instance on localhost, port 4503. Hostname and port can be changed with the aem.host and aem.port user defined properties.
+
+The profile `integrationTests` is also available for the verify goal, to run the provided integration tests on the AEM instance.
+
 ## Using SPA Starter Kit Archetype
 
 Archetype `aem-spa-project-archetype` must be available locally (by cloning this repo and building it) or on artifactory.
@@ -99,15 +110,3 @@ $ mvn archetype:generate -B \
      -DcomponentGroup=<component-group> \
      -DoptionFrontend=react
 ```
-## Guidelines for SPA development in AEM
-
-Developing single page applications on AEM assumes that the front-end developer observes standard best practices when creating an SPA. If as a front end developer you follow these general best practices as well as few AEM-specific principles, your SPA will be functional with AEM and its content-authoring capabilities.
-
-* *Portability* - As with any components, the components should be built to be as portable as possible. The SPA should be built with portably and reusable components, avoiding static paths that refer to the content structure.
-* *AEM Drives Site Structure* - The front end-developer creates components and owns their internal structure, but relies on AEM to define the content structure of the site.
-* *Dynamic Rendering* - All rendering should be dynamic.
-* *Dynamic Routing* - The SPA is responsible for the routing and AEM listens to it and fetches the component data based on it. Any routing should be dynamic as well.
-
-If you keep these principles in mind as you develop your SPA, it will be as flexible and as future proof as possible while enabling all supported AEM authoring functionality. 
-
-For further details about SPA development on AEM including guideliens, walkthroughs, best practices and examples, see the [AEM Developer Documentation](https://adobe.com/go/aem-dev-spa).

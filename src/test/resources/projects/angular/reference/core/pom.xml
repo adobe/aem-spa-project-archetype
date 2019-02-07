@@ -72,6 +72,28 @@
     <!-- P R O F I L E S                                                        -->
     <!-- ====================================================================== -->
     <profiles>
+        <!-- Development profile: install only the bundle -->
+        <profile>
+            <id>autoInstallBundle</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>maven-sling-plugin</artifactId>
+                        <configuration>
+                            <!-- Note that this requires /apps/we-retail/install to exist!! -->
+                            <!-- This is typically the case when ui.apps is deployed first -->
+                            <!-- Otherwise, create /apps/weretail/install manually (CRXDE|Lite) -->
+                            <slingUrlSuffix>/apps/weretail/install/</slingUrlSuffix>
+                            <failOnError>true</failOnError>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
         <profile>
             <id>autoInstallPackage</id>
