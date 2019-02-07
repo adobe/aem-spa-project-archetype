@@ -12,7 +12,7 @@
                 jcr:lastModified="{Date}2017-12-07T15:43:22.777+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Default policy of the page ((Test SPA Angular Project)"
+                jcr:title="Default policy of the page (Test SPA Angular Project)"
                 sling:resourceType="wcm/core/components/policy/policy">
                 <jcr:content
                     jcr:primaryType="nt:unstructured"
