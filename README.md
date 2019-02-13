@@ -1,5 +1,9 @@
 ## Maven Archetype for SPA Starter Kit
 
+This archetype creates a minimal Adobe Experience Manager project as a starting point for your own SPA projects. The properties that must be provided when using this archetype allow to name as desired all parts of this project.
+
+See the [Getting Started with the AEM SPA Editor - WKND Events Tutorial](https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-spa-wknd-tutorial-develop.html) on the Adobe Help Center website for an example of how to use it.
+
 ## System requirements
 
 - [Java](https://www.java.com/en/download/) 1.8 or higher
@@ -53,6 +57,17 @@ Depending on the use case maven can use different archetype variant (use `-Darch
 - `local` represents `~/.m2/archetype-catalog.xml`
 - `remote` represents http://repo.maven.apache.org/maven2/archetype-catalog.xml
 
+## Provided Maven profiles
+The generated maven project support different deployment profiles when running the Maven install goal `mvn install` within the reactor.
+
+Id                        | Description
+--------------------------|------------------------------
+autoInstallBundle         | Install core bundle with the maven-sling-plugin to the felix console
+autoInstallPackage        | Install the ui.content and ui.apps content package with the content-package-maven-plugin to the package manager to default author instance on localhost, port 4502. Hostname and port can be changed with the aem.host and aem.port user defined properties. 
+autoInstallPackagePublish | Install the ui.content and ui.apps content package with the content-package-maven-plugin to the package manager to default publish instance on localhost, port 4503. Hostname and port can be changed with the aem.host and aem.port user defined properties.
+
+The profile `integrationTests` is also available for the verify goal, to run the provided integration tests on the AEM instance.
+
 ## Using SPA Starter Kit Archetype
 
 Archetype `aem-spa-project-archetype` must be available locally (by cloning this repo and building it) or on artifactory.
@@ -72,7 +87,7 @@ $ mvn archetype:generate \
      -DarchetypeCatalog=internal \
      -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
      -DarchetypeArtifactId=aem-spa-project-archetype  \
-     -DarchetypeVersion=1.0.0-SNAPSHOT \
+     -DarchetypeVersion=1.0.3-SNAPSHOT \
 ```
 
 Please note that properties declared in [archetype-metadata.xml](src/main/resources/META-INF/maven/archetype-metadata.xml) with `defaultValue` are not asked during interactive mode and are defaulted to suggested values. 
@@ -85,7 +100,7 @@ $ mvn archetype:generate -B \
      -DarchetypeCatalog=local  \
      -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
      -DarchetypeArtifactId=aem-spa-project-archetype  \
-     -DarchetypeVersion=1.0.0-SNAPSHOT \
+     -DarchetypeVersion=1.0.3-SNAPSHOT \
      -Dpackage=<package> \
      -DgroupId=<group-id> \
      -DartifactId=<artifact-id> \

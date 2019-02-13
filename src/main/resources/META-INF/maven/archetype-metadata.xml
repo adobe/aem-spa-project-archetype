@@ -101,5 +101,8 @@
         <requiredProperty key="symbol_dollar">
             <defaultValue>$</defaultValue>
         </requiredProperty>
+        <requiredProperty key="symbol_hash">
+            <defaultValue>#</defaultValue>
+        </requiredProperty>
     </requiredProperties>
 </archetype-descriptor>

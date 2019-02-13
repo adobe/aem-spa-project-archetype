@@ -13,6 +13,6 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-require('./components/Text/Text');
-require('./components/Page/Page');
+require('./components/Text');
+require('./components/Page');
 

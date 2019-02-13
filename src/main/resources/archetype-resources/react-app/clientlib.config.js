@@ -29,10 +29,10 @@ module.exports = {
         serializationFormat: "xml",
         assets: {
             js: [
-                "dist/**/*.js"
+                "build/static/**/*.js"
             ],
             css: [
-                "dist/**/*.css"
+                "build/static/**/*.css"
             ]
         }
     }
