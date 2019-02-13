@@ -1,5 +1,5 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- ~ Copyright 2018 Adobe Incorporated
+ ~ Copyright 2018 Adobe Systems Incorporated
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -13,15 +13,21 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-require("babel-polyfill");
+import React from 'react';
+import { Page, withModel } from '@adobe/cq-react-editable-components';
 
-var context = require.context('.', true, /\.test\.js$/);
-context.keys().forEach(context);
+require('./App.css');
 
-// needed for code coverage, all '.js' files from 'src' folder
-// except from '/server/' are reported
-var coverageContext = require.context('../src', true, /^(?:(.(?!\/server\/))+)\.js$/);
-// filter out all '.css' files
-coverageContext.keys().filter(function(el) {
-    return !el.endsWith(".css");
-}).forEach(coverageContext);
+// This component is the application entry point
+class App extends Page {
+    render() {
+        return (
+            <div>
+            { this.childComponents }
+            { this.childPages }
+            </div>
+        )
+    }
+}
+
+export default withModel(App);

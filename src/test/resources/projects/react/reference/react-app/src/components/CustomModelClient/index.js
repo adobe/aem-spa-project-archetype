@@ -18,7 +18,7 @@ import { ModelClient } from '@adobe/cq-spa-page-model-manager';
 
 const FETCH_CONFIG = {
     headers: {
-        Authorization: 'Basic YWRtaW46YWRtaW4='
+        Authorization: process.env.REACT_APP_AEM_AUTHORIZATION_HEADER
     }
 };
 
@@ -47,7 +47,7 @@ export class CustomModelClient extends ModelClient {
             if (response.status >= 200 && response.status < 300) {
                 return response.json();
             } else {
-                let error = new Error('while fetching the model for url: ' + url, response.statusText || response.status);
+                let error = new Error('while fetching the model for url: ' + url + ', status: ' + response.statusText || response.status);
                 error.response = response;
 
                 return Promise.reject(error);

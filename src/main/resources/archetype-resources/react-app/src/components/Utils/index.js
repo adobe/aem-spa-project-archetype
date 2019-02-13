@@ -13,21 +13,20 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-import React from 'react';
-import { Page, withModel } from '@adobe/cq-react-editable-components';
-
-require('./main.css');
-
-// This component is the application entry point
-class App extends Page {
-    render() {
-        return (
-            <div>
-            { this.childComponents }
-            { this.childPages }
-            </div>
-        )
-    }
+/**
+ * Extract an id from the cqModel field of given properties
+ *
+ * @param path     - Path to be converted into an id
+ * @returns {string|undefined}
+ */
+export function extractModelId (path) {
+    return path && path.replace(/\/|:/g, '_');
 }
 
-export default withModel(App);
+export function isBrowser() {
+    try {
+        return typeof window !== 'undefined';
+    }catch(e){
+        return false;
+    }
+}

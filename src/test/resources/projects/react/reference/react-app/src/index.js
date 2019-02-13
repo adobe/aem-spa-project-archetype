@@ -15,10 +15,11 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import { ModelManager, ModelClient, Constants } from "@adobe/cq-spa-page-model-manager";
+import App from './components/App';
+import { ModelManager, Constants } from '@adobe/cq-spa-page-model-manager';
 import {BrowserRouter} from 'react-router-dom';
-import "./ImportComponents";
+import './ImportComponents';
+import {CustomModelClient} from './components/CustomModelClient'
 
 function render(pageModel, useHydrate) {
     // Using HashRouter for now as it's easier to deal with hashes in the location + we are serving static content (while BrowserRouter is a better fit for serving dynamic content)
@@ -28,18 +29,23 @@ function render(pageModel, useHydrate) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    let jsonScript = document.getElementById("__INITIAL_STATE__");
+    let jsonScript = document.getElementById('__INITIAL_STATE__');
     let initialState = null;
     if (jsonScript) {
         initialState = JSON.parse(jsonScript.innerText);
         // Remove the script element from the DOM
         jsonScript.remove();
     }
-    
-    let apiHost = process.env.API_HOST;
+
     let initialModel = initialState ? initialState.rootModel : undefined;
 
-    let modelClient = new ModelClient(apiHost);
+    let modelClient;
+    // Set a custom ModelClient with authorization header in test environment
+    if (process.env.NODE_ENV === 'development') {
+        const apiHost = process.env.REACT_APP_API_HOST;
+        modelClient = new CustomModelClient(apiHost);
+    }
+
     ModelManager.initialize({model: initialModel, modelClient: modelClient}).then((model) => {
         render(model, !!initialModel);
     });

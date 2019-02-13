@@ -5,13 +5,20 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && clientlib --verbose",
-    "test": "react-scripts test",
-    "test:debug": "react-scripts --inspect-brk test --no-cache --runInBand",
+    "test": "react-scripts test --coverage",
+    "test:debug": "react-scripts --inspect-brk test --coverage --no-cache --runInBand",
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:4502",
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*",
+      "!src/ImportComponents.js",
+      "!src/index.js"
+    ]
   },
   "dependencies": {
     "@adobe/cq-react-editable-components": "~1.0.4",
@@ -19,18 +26,20 @@
     "@adobe/cq-spa-page-model-manager": "~1.0.3",
     "aem-clientlib-generator": "^1.4.1",
     "clone": "^2.1.2",
+    "dompurify": "^1.0.9",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-fast-compare": "^2.0.2",
     "react-router-dom": "^4.3.1",
-    "react-test-renderer": "^16.7.0",
-    "react-scripts": "^2.1.3"
+    "react-scripts": "^2.1.3",
+    "react-test-renderer": "^16.7.0"
   },
   "devDependencies": {
-    "babel-preset-react": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
+    "node-fetch": "^2.3.0",
     "sinon": "^7.2.2"
   },
   "browserslist": [
