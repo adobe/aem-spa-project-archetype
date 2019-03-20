@@ -87,7 +87,7 @@ $ mvn archetype:generate \
      -DarchetypeCatalog=internal \
      -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
      -DarchetypeArtifactId=aem-spa-project-archetype  \
-     -DarchetypeVersion=1.0.3-SNAPSHOT \
+     -DarchetypeVersion=1.0.5-SNAPSHOT \
 ```
 
 Please note that properties declared in [archetype-metadata.xml](src/main/resources/META-INF/maven/archetype-metadata.xml) with `defaultValue` are not asked during interactive mode and are defaulted to suggested values. 
@@ -100,7 +100,7 @@ $ mvn archetype:generate -B \
      -DarchetypeCatalog=local  \
      -DarchetypeGroupId=com.adobe.cq.spa.archetypes  \
      -DarchetypeArtifactId=aem-spa-project-archetype  \
-     -DarchetypeVersion=1.0.3-SNAPSHOT \
+     -DarchetypeVersion=1.0.5-SNAPSHOT \
      -Dpackage=<package> \
      -DgroupId=<group-id> \
      -DartifactId=<artifact-id> \
