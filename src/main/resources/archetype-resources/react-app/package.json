@@ -23,7 +23,7 @@
   "dependencies": {
     "@adobe/cq-react-editable-components": "~1.0.4",
     "@adobe/cq-spa-component-mapping": "~1.0.3",
-    "@adobe/cq-spa-page-model-manager": "~1.0.6",
+    "@adobe/cq-spa-page-model-manager": "~1.0.7",
     "aem-clientlib-generator": "^1.4.1",
     "clone": "^2.1.2",
     "dompurify": "^1.0.9",
