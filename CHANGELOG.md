@@ -1,3 +1,11 @@
+### *1.1.0* - 5 April 2019
+* **NEW FEATURE** Template Editor
+  * Give access to the list of Allowed Components from the ResponsiveGrid component
+
+
+### *1.0.6* - 4 April 2019
+ * Dependencies updated to work with AEM 6.5
+
 ### *1.0.4* - 13 February 2019
 * Non-ejected React project structure
 * React project refactoring, XSS sanitization and clean-up
