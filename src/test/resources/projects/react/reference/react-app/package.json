@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && clientlib --verbose",
+    "sync": "aemsync -d -w ../ui.apps/src/main/content",
     "test": "react-scripts test --coverage",
     "test:debug": "react-scripts --inspect-brk test --coverage --no-cache --runInBand",
     "eject": "react-scripts eject"
@@ -35,6 +36,7 @@
     "react-test-renderer": "^16.7.0"
   },
   "devDependencies": {
+    "aemsync": "^3.0.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.8.0",
