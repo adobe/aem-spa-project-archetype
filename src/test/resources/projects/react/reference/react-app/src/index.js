@@ -17,15 +17,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import { ModelManager, Constants } from '@adobe/cq-spa-page-model-manager';
-import {BrowserRouter} from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
 import './ImportComponents';
 import {CustomModelClient} from './components/CustomModelClient'
 
 function render(pageModel, useHydrate) {
-    // Using HashRouter for now as it's easier to deal with hashes in the location + we are serving static content (while BrowserRouter is a better fit for serving dynamic content)
-    ReactDOM[useHydrate ? 'hydrate' : 'render']((<BrowserRouter>
-        <App cqChildren={pageModel[Constants.CHILDREN_PROP]} cqItems={pageModel[Constants.ITEMS_PROP]} cqItemsOrder={pageModel[Constants.ITEMS_ORDER_PROP]} cqPath={pageModel[Constants.PATH_PROP]} locationPathname={ window.location.pathname }/>
-    </BrowserRouter>), document.getElementById('page'));
+    const history = createBrowserHistory();
+    ReactDOM[useHydrate ? 'hydrate' : 'render']((
+        <Router history={history}>
+            <App history={history}
+                 cqChildren={pageModel[Constants.CHILDREN_PROP]}
+                 cqItems={pageModel[Constants.ITEMS_PROP]}
+                 cqItemsOrder={pageModel[Constants.ITEMS_ORDER_PROP]}
+                 cqPath={pageModel[Constants.PATH_PROP]}
+                 locationPathname={ window.location.pathname }/>
+        </Router>),
+      document.getElementById('page'));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
