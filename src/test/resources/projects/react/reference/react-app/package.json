@@ -8,7 +8,8 @@
     "sync": "aemsync -d -w ../ui.apps/src/main/content",
     "test": "react-scripts test --coverage",
     "test:debug": "react-scripts --inspect-brk test --coverage --no-cache --runInBand",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy-local": "mvn -f ../pom.xml clean install -PautoInstallPackage"
   },
   "proxy": "http://localhost:4502",
   "eslintConfig": {

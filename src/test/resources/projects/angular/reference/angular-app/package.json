@@ -11,7 +11,8 @@
     "test": "ng test --watch=false",
     "test:debug": "ng test --watch=true",
     "lint": "tslint ./src/**/*.ts -t verbose",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy-local": "mvn -f ../pom.xml clean install -PautoInstallPackage"
   },
   "keywords": [],
   "author": "",
