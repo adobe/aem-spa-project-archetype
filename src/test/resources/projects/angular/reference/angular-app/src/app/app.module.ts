@@ -20,8 +20,8 @@ import { APP_BASE_HREF } from '@angular/common';
 import { AppComponent } from './app.component';
 import { SpaAngularEditableComponentsModule } from '@adobe/cq-angular-editable-components';
 import { ModelManagerService } from './components/model-manager.service';
+import { PageComponent } from './components/page/page.component';
 import { TextComponent } from './components/text/text.component';
-import { MainContentComponent } from './components/main-content/main-content.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -31,11 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserTransferStateModule ],
   providers: [ ModelManagerService,
   { provide: APP_BASE_HREF, useValue: '/' } ],
-  declarations: [ AppComponent,
-                  TextComponent,
-                  MainContentComponent],
-  entryComponents: [ TextComponent,MainContentComponent ],
+  declarations: [AppComponent, TextComponent, PageComponent],
+  entryComponents: [TextComponent, PageComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
-
