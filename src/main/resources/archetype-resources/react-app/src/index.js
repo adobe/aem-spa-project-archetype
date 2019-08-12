@@ -18,7 +18,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import { ModelManager, Constants } from '@adobe/cq-spa-page-model-manager';
 import { Router } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import './ImportComponents';
 import {CustomModelClient} from './components/CustomModelClient'
 
