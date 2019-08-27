@@ -100,7 +100,7 @@
                         <createdBy>${vault.package.company}</createdBy>
                     </properties>
 
-                    <filterSource>${basedir}/META-INF/vault/filter.xml</filterSource>
+                    <filterSource>${project.basedir}/src/main/content/META-INF/vault/filter.xml</filterSource>
 
                     <dependencies>
                         <dependency>

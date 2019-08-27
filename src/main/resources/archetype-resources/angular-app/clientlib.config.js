@@ -25,7 +25,7 @@ module.exports = {
         allowProxy: true,
         categories: ["${projectName}-${optionFrontend}"],
         embed: ["${projectName}.responsivegrid"],
-        jsProcessor: ["min:gcc"],
+        jsProcessor: ['default:none', 'min:none'],
         serializationFormat: "xml",
         assets: {
             js: [
