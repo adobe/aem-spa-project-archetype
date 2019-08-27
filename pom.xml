@@ -111,8 +111,17 @@
                         <resource>
                             <directory>src/main/resources</directory>
                             <excludes>
+                                <exclude>**/.DS_Store</exclude>
                                 <exclude>archetype-resources/react-app/node_modules/</exclude>
+                                <exclude>archetype-resources/react-app/target/</exclude>
                                 <exclude>archetype-resources/angular-app/node_modules/</exclude>
+                                <exclude>archetype-resources/angular-app/target/</exclude>
+                            </excludes>
+                        </resource>
+                        <resource>
+                            <directory>src/test/resources</directory>
+                            <excludes>
+                                <exclude>**/.DS_Store</exclude>
                             </excludes>
                         </resource>
                     </resources>
