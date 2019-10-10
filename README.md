@@ -86,7 +86,7 @@ Contributions are welcome! Read the [Contributing Guide](CONTRIBUTING.md) for mo
 
 ### Releasing
 
-On every commit to the `development` branch, GitHub Actions will run the tests and make a snapshot deployment if they are successful. To create and deploy a (non-snapshot) release, run the following commands:
+On every commit to the `master` branch, GitHub Actions will run the tests and make a snapshot deployment if they are successful. To create and deploy a (non-snapshot) release, run the following commands:
 
 ```sh
 # Remove "-SNAPSHOT" from the version number in the POM file

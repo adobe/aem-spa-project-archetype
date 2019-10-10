@@ -20,7 +20,7 @@ name: Release
 on:
   push:
     branches:
-      - development
+      - master
 
 jobs:
   release:
