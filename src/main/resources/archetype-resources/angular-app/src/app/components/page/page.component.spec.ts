@@ -15,7 +15,7 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainContentComponent } from './main-content.component';
+import { PageComponent } from './page.component';
 import {AppRoutingModule} from "../../app-routing.module";
 import {ModelManagerService} from "../model-manager.service";
 import {BrowserTransferStateModule} from "@angular/platform-browser";
@@ -23,16 +23,16 @@ import {SpaAngularEditableComponentsModule} from "@adobe/cq-angular-editable-com
 import {APP_BASE_HREF} from "@angular/common";
 import { ModelManager } from '@adobe/cq-spa-page-model-manager';
 
-describe('MainContentComponent', () => {
-  let component: MainContentComponent;
-  let fixture: ComponentFixture<MainContentComponent>;
+describe('PageComponentComponent', () => {
+  let component: PageComponent;
+  let fixture: ComponentFixture<PageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ SpaAngularEditableComponentsModule, AppRoutingModule, BrowserTransferStateModule ],
       providers: [ ModelManagerService,
         { provide: APP_BASE_HREF, useValue: '/' }],
-      declarations: [ MainContentComponent ]
+      declarations: [PageComponent]
     })
     .compileComponents();
   }));
@@ -43,7 +43,7 @@ describe('MainContentComponent', () => {
       return Promise.resolve({});
     });
 
-    fixture = TestBed.createComponent(MainContentComponent);
+    fixture = TestBed.createComponent(PageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

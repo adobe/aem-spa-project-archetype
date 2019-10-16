@@ -25,7 +25,7 @@ module.exports = {
         allowProxy: true,
         categories: ["test-spa-react-project-react"],
         embed: ["test-spa-react-project.responsivegrid"],
-        jsProcessor: ["min:gcc"],
+        jsProcessor: ['default:none', 'min:none'],
         serializationFormat: "xml",
         assets: {
             js: [
@@ -37,4 +37,3 @@ module.exports = {
         }
     }
 };
-

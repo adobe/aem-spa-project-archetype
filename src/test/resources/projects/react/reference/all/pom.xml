@@ -47,7 +47,7 @@
                 <groupId>org.apache.jackrabbit</groupId>
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <configuration>
-                    <filterSource>${project.basedir}/src/content/META-INF/vault/filter.xml</filterSource>
+                    <filterSource>${project.basedir}/src/main/content/META-INF/vault/filter.xml</filterSource>
 
                     <dependencies>
                         <dependency>

@@ -23,8 +23,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import javax.annotation.Nullable;
-
 import org.apache.jackrabbit.JcrConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.request.RequestParameter;
@@ -34,6 +32,7 @@ import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.scripting.SlingBindings;
 import org.apache.sling.models.factory.ModelFactory;
 import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletRequest;
+import org.jetbrains.annotations.Nullable;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -47,12 +46,12 @@ import org.powermock.reflect.Whitebox;
 
 import com.adobe.cq.export.json.SlingModelFilter;
 import com.adobe.cq.export.json.hierarchy.HierarchyNodeExporter;
-import com.adobe.spa.test.projects.context.TestContext;
-import com.adobe.spa.test.projects.models.HierarchyPage;
 import com.adobe.cq.sightly.WCMBindings;
 import com.adobe.cq.wcm.core.components.testing.MockAdapterFactory;
 import com.adobe.cq.wcm.core.components.testing.MockResponsiveGrid;
 import com.adobe.cq.wcm.core.components.testing.MockStyle;
+import com.adobe.spa.test.projects.context.TestContext;
+import com.adobe.spa.test.projects.models.HierarchyPage;
 import com.day.cq.wcm.api.NameConstants;
 import com.day.cq.wcm.api.Template;
 import com.day.cq.wcm.api.TemplateManager;

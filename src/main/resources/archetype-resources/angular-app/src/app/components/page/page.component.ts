@@ -14,8 +14,8 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-import { Component, OnInit } from '@angular/core';
-import { ModelManagerService }     from '../model-manager.service';
+import { Component } from '@angular/core';
+import { ModelManagerService } from '../model-manager.service';
 import { ActivatedRoute } from '@angular/router';
 import { Constants } from "@adobe/cq-angular-editable-components";
 
@@ -26,7 +26,7 @@ import { Constants } from "@adobe/cq-angular-editable-components";
   `
 })
 
-export class MainContentComponent {
+export class PageComponent {
   items;
   itemsOrder;
   path;

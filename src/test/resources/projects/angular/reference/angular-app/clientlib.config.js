@@ -25,7 +25,7 @@ module.exports = {
         allowProxy: true,
         categories: ["test-spa-angular-project-angular"],
         embed: ["test-spa-angular-project.responsivegrid"],
-        jsProcessor: ["min:gcc"],
+        jsProcessor: ['default:none', 'min:none'],
         serializationFormat: "xml",
         assets: {
             js: [

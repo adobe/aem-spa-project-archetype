@@ -16,7 +16,7 @@
 import { NgModule } from '@angular/core';
 import { RouteReuseStrategy, RouterModule, Routes, UrlMatchResult, UrlSegment } from '@angular/router';
 import { AemPageDataResolver, AemPageRouteReuseStrategy } from "@adobe/cq-angular-editable-components";
-import { MainContentComponent } from "./components/main-content/main-content.component";
+import { PageComponent } from "./components/page/page.component";
 
 export function AemPageMatcher(url: UrlSegment[]): UrlMatchResult {
   if (url.length) {
@@ -34,7 +34,7 @@ export function AemPageMatcher(url: UrlSegment[]): UrlMatchResult {
 const routes: Routes = [
   {
     matcher: AemPageMatcher,
-    component: MainContentComponent,
+    component: PageComponent,
     resolve: {
       path: AemPageDataResolver
     }

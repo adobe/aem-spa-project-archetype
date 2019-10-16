@@ -15,9 +15,7 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 package ${package}.models;
 
-import javax.annotation.Nullable;
-
-import org.apache.sling.api.resource.Resource;
+import org.jetbrains.annotations.Nullable;
 import org.osgi.annotation.versioning.ProviderType;
 
 import com.adobe.cq.export.json.ContainerExporter;
