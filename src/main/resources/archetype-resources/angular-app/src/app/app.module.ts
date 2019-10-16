@@ -14,7 +14,7 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import './components/mapping';
-import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { AppComponent } from './app.component';
@@ -25,10 +25,11 @@ import { TextComponent } from './components/text/text.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports: [ BrowserModule.withServerTransition({ appId: '${projectName}' }),
+  imports: [
+    BrowserModule,
     SpaAngularEditableComponentsModule,
-    AppRoutingModule,
-    BrowserTransferStateModule ],
+    AppRoutingModule
+  ],
   providers: [ ModelManagerService,
   { provide: APP_BASE_HREF, useValue: '/' } ],
   declarations: [AppComponent, TextComponent, PageComponent],

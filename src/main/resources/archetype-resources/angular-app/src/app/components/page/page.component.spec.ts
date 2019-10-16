@@ -18,7 +18,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PageComponent } from './page.component';
 import {AppRoutingModule} from "../../app-routing.module";
 import {ModelManagerService} from "../model-manager.service";
-import {BrowserTransferStateModule} from "@angular/platform-browser";
 import {SpaAngularEditableComponentsModule} from "@adobe/cq-angular-editable-components";
 import {APP_BASE_HREF} from "@angular/common";
 import { ModelManager } from '@adobe/cq-spa-page-model-manager';
@@ -29,7 +28,7 @@ describe('PageComponentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ SpaAngularEditableComponentsModule, AppRoutingModule, BrowserTransferStateModule ],
+      imports: [SpaAngularEditableComponentsModule, AppRoutingModule],
       providers: [ ModelManagerService,
         { provide: APP_BASE_HREF, useValue: '/' }],
       declarations: [PageComponent]

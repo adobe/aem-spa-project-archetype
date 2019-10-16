@@ -4,6 +4,10 @@ This archetype creates a minimal Adobe Experience Manager project as a starting 
 
 See the [Getting Started with the AEM SPA Editor - WKND Events Tutorial](https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-spa-wknd-tutorial-develop.html) on the Adobe Help Center website for an example of how to use it.
 
+## Contributing
+
+Contributions are welcome! Read the [Contributing Guide](CONTRIBUTING.md) for more information.
+
 ## System requirements
 
 - [Java](https://www.java.com/en/download/) 1.8 or higher

@@ -13,10 +13,8 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-import React from "react";
 
-import {extractModelId,isBrowser} from "./";
-
+import extractModelId from "./extract-model-id";
 
 describe("Utils ->", () => {
 
@@ -34,12 +32,4 @@ describe("Utils ->", () => {
         });
 
     });
-
-    describe("isBrowser ->", () => {
-
-        it("In the default context of the JEST environment, should find a window object",() => {
-            expect(isBrowser()).toBe(true);
-        });
-    });
-
 });
