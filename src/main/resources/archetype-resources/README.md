@@ -1,8 +1,9 @@
-${symbol_hash} Initial AEM SPA project template
+#set($hash = '#')
+${hash} Initial AEM SPA project template
 
 This is a content package for an AEM project set up with the SPA Maven Archetype for AEM (aem-spa-project-archetype).
 
-${symbol_hash}${symbol_hash} Modules of this project:
+${hash}${hash} Modules of this project:
 
 * [core](core/): OSGi bundle containing:
   * Java classes (e.g. Sling Models, Servlets, business logic)
@@ -17,13 +18,13 @@ ${symbol_hash}${symbol_hash} Modules of this project:
 * [all](all/): All-in-One package
 
 
-${symbol_hash}${symbol_hash} Build all modules
+${hash}${hash} Build all modules
 
 To build all the modules run in the project root directory the following command with Maven:
 
     mvn clean install
 
-${symbol_hash}${symbol_hash}${symbol_hash} Module build order and installation
+${hash}${hash}${hash} Module build order and installation
 
 The frontend modules builds and transpiles the es6 javascript source code into a browser friendly 2015 version.
 It then creates a client library and copy the built javascript files in the [ui.apps/src/main/content/jcr_root/apps](ui.apps/src/main/content/jcr_root/apps/) module.
@@ -35,7 +36,7 @@ For ease of the build and installation the following profiles are provided in th
  * ``autoInstallPackage`` - installs the package/bundle to an existing AEM author instance
  * ``autoInstallPackagePublish`` - installs the package/bundle to an existing AEM publish instance
 
-${symbol_hash}${symbol_hash}${symbol_hash} UberJar
+${hash}${hash}${hash} UberJar
 
 This project relies on the unobfuscated AEM 6.4 cq-quickstart. This is publicly available on https://repo.adobe.com
 
@@ -43,7 +44,7 @@ For more details about the UberJar please head over to the
 [How to Build AEM Projects using Apache Maven](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/ht-projects-maven.html)
 documentation page.
 
-${symbol_hash}${symbol_hash}${symbol_hash} Install everything
+${hash}${hash}${hash} Install everything
 
 In the All-in-One package in [all](all/) there is additional profile available to package all the dependencies into a
 single content package and install everything to an existing AEM
@@ -67,7 +68,7 @@ After deployment you can open the sample content page in your browser:
 
 * Author: http://${aem.host}:${aem.port}${aem.contextPath}/editor.html/content/${projectName}/en.html
 
-${symbol_hash}${symbol_hash} System requirements
+${hash}${hash} System requirements
 
 * JDK 1.8 or higher
 * Apache Maven 3.5.0 or higher
@@ -75,7 +76,7 @@ ${symbol_hash}${symbol_hash} System requirements
 
 It is recommended to set up the local AEM instances with `nosamplecontent` run mode.
 
-${symbol_hash}${symbol_hash} Maven settings
+${hash}${hash} Maven settings
 
 The project comes with the auto-public repository configured. To setup the repository in your Maven settings, refer to:
 

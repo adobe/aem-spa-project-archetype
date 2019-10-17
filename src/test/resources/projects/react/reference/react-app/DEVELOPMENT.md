@@ -1,4 +1,3 @@
-
 ## Running the development server
 ```
 npm run start
@@ -7,13 +6,13 @@ This will open the local dev server on port 3000. You can navigate then to `http
 where `REACT_APP_API_HOST` points to your AEM instance.
 
 #### Your requests to AEM are failing
-Most probably this is due to CORS rejection, so you might want to either configure AEM to accept CORS or bypass it from the browser if you are doing local development. 
+Most probably this is due to CORS rejection, so you might want to either configure AEM to accept CORS or bypass it from the browser if you are doing local development.
 Also assure that your request to the AEM instance is authorized.
 
 #### Authorize your requests
-* Instantiate a CustomModelClient such as [src/server/CustomModelClient.js](https://github.com/adobe/aem-spa-project-archetype/blob/master/src/main/resources/archetype-resources/react-app/src/server/CustomModelClient.js) 
+* Instantiate a CustomModelClient such as [src/server/CustomModelClient.js](https://github.com/adobe/aem-spa-project-archetype/blob/master/src/main/resources/archetype-resources/react-app/src/server/CustomModelClient.js)
 when initializing the [ModelManager in src/index.js](https://github.com/adobe/aem-spa-project-archetype/blob/master/src/main/resources/archetype-resources//react-app/src/index.js#L42)
-* If necessary adapt the Authorization header in [src/server/CustomModelClient.js](https://github.com/adobe/aem-spa-project-archetype/blob/master/src/main/resources/archetype-resources//react-app/src/server/CustomModelClient.js#L21) 
+* If necessary adapt the Authorization header in [src/server/CustomModelClient.js](https://github.com/adobe/aem-spa-project-archetype/blob/master/src/main/resources/archetype-resources//react-app/src/server/CustomModelClient.js#L21)
 
 #### Update the CORS configuration of the AEM instance
 1. Navigate to the Configuration Manager on the AEM instance at http://localhost:4502/system/console/configMgr

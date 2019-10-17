@@ -144,12 +144,5 @@
             <validationRegex>^\d+(\.\d+){0,2}(\-SNAPSHOT)?$</validationRegex>
             <defaultValue>1.0.0-SNAPSHOT</defaultValue>
         </requiredProperty>
-        <!-- Required HTL replacements -->
-        <requiredProperty key="symbol_dollar">
-            <defaultValue>$</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="symbol_hash">
-            <defaultValue>#</defaultValue>
-        </requiredProperty>
     </requiredProperties>
 </archetype-descriptor>
