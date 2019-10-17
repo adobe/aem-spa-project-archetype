@@ -15,7 +15,7 @@
 -->
 <archetype-descriptor name="basic">
     <fileSets>
-        <fileSet encoding="UTF-8">
+        <fileSet filtered="true" encoding="UTF-8">
             <directory></directory>
             <includes>
                 <include>README.md</include>
@@ -53,11 +53,57 @@
         <fileSet filtered="true" packaged="false">
             <directory>ui.content</directory>
         </fileSet>
+
+        <!-- React app -->
         <fileSet filtered="true" packaged="false">
             <directory>react-app</directory>
+            <excludes>
+                <!-- Do not filter binary files -->
+                <exclude>**/*.gif</exclude>
+                <exclude>**/*.ico</exclude>
+                <exclude>**/*.jpeg</exclude>
+                <exclude>**/*.jpg</exclude>
+                <exclude>**/*.png</exclude>
+                <exclude>**/*.svg</exclude>
+            </excludes>
         </fileSet>
+        <fileSet filtered="false" packaged="false">
+            <directory>react-app</directory>
+            <includes>
+                <!-- Do not filter binary files -->
+                <include>**/*.gif</include>
+                <include>**/*.ico</include>
+                <include>**/*.jpeg</include>
+                <include>**/*.jpg</include>
+                <include>**/*.png</include>
+                <include>**/*.svg</include>
+            </includes>
+        </fileSet>
+
+        <!-- Angular app -->
         <fileSet filtered="true" packaged="false">
             <directory>angular-app</directory>
+            <excludes>
+                <!-- Do not filter binary files -->
+                <exclude>**/*.gif</exclude>
+                <exclude>**/*.ico</exclude>
+                <exclude>**/*.jpeg</exclude>
+                <exclude>**/*.jpg</exclude>
+                <exclude>**/*.png</exclude>
+                <exclude>**/*.svg</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet filtered="false" packaged="false">
+            <directory>angular-app</directory>
+            <includes>
+                <!-- Do not filter binary files -->
+                <include>**/*.gif</include>
+                <include>**/*.ico</include>
+                <include>**/*.jpeg</include>
+                <include>**/*.jpg</include>
+                <include>**/*.png</include>
+                <include>**/*.svg</include>
+            </includes>
         </fileSet>
     </fileSets>
     <requiredProperties>
