@@ -25,6 +25,7 @@
             <directory></directory>
             <includes>
                 <include>.gitignore</include>
+                <include>.editorconfig</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" packaged="false">
