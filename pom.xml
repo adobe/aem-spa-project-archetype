@@ -53,7 +53,7 @@
     <!-- ====================================================================== -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.archetype.version>3.0.1</maven.archetype.version>
+        <maven.archetype.version>3.1.2</maven.archetype.version>
         <archetype.test.ignoreEOLStyle>true</archetype.test.ignoreEOLStyle>
         <archetype.test.skip>${skipTests}</archetype.test.skip>
     </properties>

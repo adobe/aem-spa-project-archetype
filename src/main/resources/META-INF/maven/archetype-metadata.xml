@@ -106,43 +106,64 @@
             </includes>
         </fileSet>
     </fileSets>
+
     <requiredProperties>
-        <!-- Project name is used for building AEM apps path, content path, conf etc. -->
+        <!--
+            PROPERTIES WITHOUT DEFAULTS
+            (Users will be prompted to provide these)
+        -->
+
+        <!-- `projectTitle`: Descriptive project name (e.g. `My App`) -->
+        <requiredProperty key="projectTitle" />
+
+        <!-- `projectName`: Used for building AEM apps path, content path, conf,
+            etc. (e.g. `myapp`) -->
         <requiredProperty key="projectName">
             <validationRegex>^[a-zA-Z0-9\_]+$</validationRegex>
-            <defaultValue>mysamplespa</defaultValue>
         </requiredProperty>
-        <!-- Project title - descriptive project name -->
-        <requiredProperty key="projectTitle">
-            <defaultValue>My Sample SPA</defaultValue>
-        </requiredProperty>
-        <!-- Name of the component group -->
-        <requiredProperty key="componentGroup">
-            <defaultValue>${projectTitle}</defaultValue>
-        </requiredProperty>
-        <!-- Type of the frontend app project -->
-        <requiredProperty key="optionFrontend">
-            <validationRegex>^(angular|react)$</validationRegex>
-            <defaultValue>react</defaultValue>
-        </requiredProperty>
-        <!-- Maven artifact groupId for all projects -->
+
+        <!-- groupId: Maven artifact groupId for all projects (e.g.
+            `com.mycompany`) -->
         <requiredProperty key="groupId">
             <validationRegex>^[a-zA-Z0-9\.\-_]+$</validationRegex>
         </requiredProperty>
-        <!-- Maven artifact "root" artifactId, is suffixed for the individual modules -->
+
+        <!-- `optionFrontend`: Frontend framework to use in the generated
+            project (either `angular` or `react`) -->
+        <requiredProperty key="optionFrontend">
+            <validationRegex>^(angular|react)$</validationRegex>
+        </requiredProperty>
+
+        <!--
+            PROPERTIES WITH DEFAULTS
+            (Users will not be prompted for these unless they answer the
+            confirmation prompt with "N", see
+            https://issues.apache.org/jira/browse/ARCHETYPE-308)
+        -->
+
+        <!-- `artifactId`: Maven artifact "root" artifactId, is prefixed to the
+            individual modules (e.g. `com.mycompany.myapp`) -->
         <requiredProperty key="artifactId">
             <validationRegex>^[a-zA-Z0-9\.\-_]+$</validationRegex>
-            <defaultValue>${groupId}.${projectName}</defaultValue>
+            <defaultValue>${projectName}</defaultValue>
         </requiredProperty>
-        <!-- Java class package name -->
+
+        <!-- `package`: Java class package name (e.g. `com.mycompany.myapp`) -->
         <requiredProperty key="package">
             <validationRegex>^[a-z0-9\.]+$</validationRegex>
             <defaultValue>${groupId}.${projectName}</defaultValue>
         </requiredProperty>
-        <!-- Maven artifact version - e.g. 1.0.0-SNAPSHOT -->
+
+        <!-- `version`: Maven artifact version (e.g. `1.0.0-SNAPSHOT`) -->
         <requiredProperty key="version">
             <validationRegex>^\d+(\.\d+){0,2}(\-SNAPSHOT)?$</validationRegex>
             <defaultValue>1.0.0-SNAPSHOT</defaultValue>
+        </requiredProperty>
+
+        <!-- `componentGroup`: Name of the component group in the AEM Editor
+            (e.g. `My App`) -->
+        <requiredProperty key="componentGroup">
+            <defaultValue>${projectTitle}</defaultValue>
         </requiredProperty>
     </requiredProperties>
 </archetype-descriptor>
