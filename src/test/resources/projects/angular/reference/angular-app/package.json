@@ -6,7 +6,7 @@
     "ng": "ng",
     "build": "ng build --build-optimizer=false && clientlib",
     "build:production": "ng build --prod --build-optimizer=false && clientlib",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config ./proxy.aem.conf.json",
     "test": "ng test --watch=false",
     "test:debug": "ng test --watch=true",
     "lint": "tslint ./src/**/*.ts -t verbose",

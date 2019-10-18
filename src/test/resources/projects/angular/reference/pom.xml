@@ -34,8 +34,8 @@
     <!-- ====================================================================== -->
     <modules>
         <module>core</module>
-         <module>angular-app</module>
-                        <module>ui.apps</module>
+        <module>angular-app</module>
+        <module>ui.apps</module>
         <module>ui.content</module>
         <module>all</module>
     </modules>

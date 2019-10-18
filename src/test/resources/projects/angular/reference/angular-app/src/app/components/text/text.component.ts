@@ -14,8 +14,21 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+import { MapTo } from '@adobe/cq-angular-editable-components';
 import { Component, Input } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
+
+/**
+ * Default Edit configuration for the Text component that interact with the Core Text component and sub-types
+ *
+ * @type EditConfig
+ */
+const TextEditConfig = {
+  emptyLabel: 'Text',
+  isEmpty: function(cqModel) {
+    return !cqModel || !cqModel.text || cqModel.text.trim().length < 1;
+  }
+};
 
 @Component({
   selector: 'app-text',
@@ -39,4 +52,4 @@ export class TextComponent {
   }
 }
 
-
+MapTo('test-spa-angular-project/components/text')(TextComponent, TextEditConfig);

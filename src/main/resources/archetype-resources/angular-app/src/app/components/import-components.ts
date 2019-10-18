@@ -1,5 +1,5 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- ~ Copyright 2018 Adobe Systems Incorporated
+ ~ Copyright 2019 Adobe Systems Incorporated
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -13,20 +13,6 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/**
- * Extract an id from the cqModel field of given properties
- *
- * @param path     - Path to be converted into an id
- * @returns {string|undefined}
- */
-export function extractModelId (path) {
-    return path && path.replace(/\/|:/g, '_');
-}
 
-export function isBrowser() {
-    try {
-        return typeof window !== 'undefined';
-    }catch(e){
-        return false;
-    }
-}
+import './container/container.component';
+import './responsive-grid/responsive-grid.component';

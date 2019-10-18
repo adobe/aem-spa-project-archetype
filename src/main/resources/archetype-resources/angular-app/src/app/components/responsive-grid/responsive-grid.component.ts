@@ -1,5 +1,5 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- ~ Copyright 2018 Adobe Systems Incorporated
+ ~ Copyright 2019 Adobe Systems Incorporated
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -14,23 +14,6 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-import { TextComponent } from "./text/text.component";
-import { MapTo, AEMContainerComponent, AEMResponsiveGridComponent } from "@adobe/cq-angular-editable-components";
+import { AEMResponsiveGridComponent, MapTo } from '@adobe/cq-angular-editable-components';
 
-/**
- * Default Edit configuration for the Text component that interact with the Core Text component and sub-types
- *
- * @type EditConfig
- */
-const TextEditConfig = {
-
-    emptyLabel: 'Text',
-
-    isEmpty: function(cqModel) {
-        return !cqModel || !cqModel.text || cqModel.text.trim().length < 1;
-    }
-};
-MapTo('${projectName}/components/text')(TextComponent, TextEditConfig);
 MapTo('wcm/foundation/components/responsivegrid')(AEMResponsiveGridComponent);
-MapTo('${projectName}/components/app')(AEMContainerComponent);
-

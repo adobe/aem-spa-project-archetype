@@ -14,18 +14,12 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-import { Injectable } from '@angular/core';
-import { ModelManager } from '@adobe/cq-spa-page-model-manager';
-
-export interface DataConfig {
-  path?: string;
-  immutable?: boolean;
-  forceReload?: boolean;
-}
-
-@Injectable()
-export class ModelManagerService {
-  getData(cfg: DataConfig) {
-    return ModelManager.getData(cfg);
-  }
+/**
+ * Extract an id from the cqModel field of given properties
+ *
+ * @param path - Path to be converted into an id
+ * @returns {string|undefined}
+ */
+export default function extractModelId(path) {
+  return path && path.replace(/\/|:/g, '_');
 }

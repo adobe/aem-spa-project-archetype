@@ -14,14 +14,9 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+import { Constants } from '@adobe/cq-angular-editable-components';
+import { ModelManager } from '@adobe/cq-spa-page-model-manager';
 import { Component } from '@angular/core';
-import { ModelManagerService }     from './components/model-manager.service';
-import { ModelManager, ModelClient } from '@adobe/cq-spa-page-model-manager';
-import { Constants } from "@adobe/cq-angular-editable-components";
-import { TransferState, makeStateKey }  from '@angular/platform-browser';
-import { isPlatformBrowser, APP_BASE_HREF } from '@angular/common';
-import { NgModule, PLATFORM_ID, APP_ID, Inject  } from '@angular/core';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -32,55 +27,18 @@ import { environment } from '../environments/environment';
     <router-outlet></router-outlet>
   `
 })
-
 export class AppComponent {
-  items;
-  itemsOrder;
-  path;
-  constructor(private modelManagerService: ModelManagerService,
-    private state: TransferState,
-    @Inject(PLATFORM_ID) private platformId: Object,
-    @Inject(APP_ID) private appId: string) {
+  items: any;
+  itemsOrder: any;
+  path: any;
 
-    const platform = isPlatformBrowser(platformId);
-    const key = makeStateKey("_angular_initial_state");
-    if (platform) {
-      // We are on the browser
-      // Let's check for the state
-      const rootModel = this.state.get(key, (<any>null));
-
-      let modelClient = new ModelClient(environment.API_HOST);
-
-      ModelManager.initialize({ model: rootModel, modelClient: modelClient })
-        .then(this.updateData.bind(this));
-    } else {
-      // We are on the server, and we know that we preloaded the ModelManager;
-      // Let's store it
-      ModelManager.getData(ModelManager.rootPath).then((model) => {
-        this.state.set(key, (<any>model));
-        this.updateData(model);
-      });
-    }
+  constructor() {
+    ModelManager.initialize().then(this.updateData);
   }
 
-  private updateData(model) {
-    this.path = model[Constants.PATH_PROP];
-    this.items = model[Constants.ITEMS_PROP];
-    this.itemsOrder = model[Constants.ITEMS_ORDER_PROP];
-  }
-
-  /**
-   * Returns a model path from the given URL
-   * @param {string} url     - Path from which to extract a model path
-   * @return {string|undefined}
-   */
-  private getModelPath(url) {
-      if (!url) {
-          return;
-      }
-
-      let dotIndex = url.indexOf(".");
-      return url.substr(0, dotIndex > -1 ? dotIndex : url.length);
-  }
+  private updateData = pageModel => {
+    this.path = pageModel[Constants.PATH_PROP];
+    this.items = pageModel[Constants.ITEMS_PROP];
+    this.itemsOrder = pageModel[Constants.ITEMS_ORDER_PROP];
+  };
 }
-

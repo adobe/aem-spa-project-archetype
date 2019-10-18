@@ -34,10 +34,7 @@
     <!-- ====================================================================== -->
     <modules>
         <module>core</module>
-        #if (${optionFrontend} == 'angular') <module>angular-app</module>
-        #end
-        #if (${optionFrontend} == 'react') <module>react-app</module>
-        #end
+        <module>${optionFrontend}-app</module>
         <module>ui.apps</module>
         <module>ui.content</module>
         <module>all</module>

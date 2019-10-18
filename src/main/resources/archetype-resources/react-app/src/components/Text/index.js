@@ -14,9 +14,9 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import React, {Component} from 'react';
-import {extractModelId} from '../Utils';
 import {MapTo} from '@adobe/cq-react-editable-components';
 import DOMPurify from 'dompurify';
+import extractModelId from '../../utils/extract-model-id';
 
 require('./Text.css');
 
