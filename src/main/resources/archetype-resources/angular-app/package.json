@@ -3,10 +3,9 @@
   "version": "1.1.0",
   "private": true,
   "scripts": {
-    "ng": "ng",
-    "build": "ng build --build-optimizer=false && clientlib",
-    "build:production": "ng build --prod --build-optimizer=false && clientlib",
-    "start": "ng serve --proxy-config ./proxy.aem.conf.json",
+    "start": "ng serve --open --proxy-config ./proxy.aem.conf.json",
+    "build": "ng build && clientlib",
+    "build:production": "ng build --prod && clientlib",
     "test": "ng test --watch=false",
     "test:debug": "ng test --watch=true",
     "lint": "tslint ./src/**/*.ts -t verbose",

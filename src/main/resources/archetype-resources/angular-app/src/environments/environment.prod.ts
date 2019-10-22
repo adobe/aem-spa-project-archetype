@@ -16,6 +16,6 @@
 export const environment = {
   production: true,
   API_HOST: "",
-  APP_ROOT_PATH: "/content/${projectName}/en",
+  APP_ROOT_PATH: "/content/${projectName}/en/home.html",
   CONTEXT_PATH: "" // configuration style: contextpath/
 };

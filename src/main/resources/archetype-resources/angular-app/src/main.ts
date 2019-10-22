@@ -21,7 +21,13 @@ import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
+} else {
+  // In development mode, redirect from "/" to app root
+  if (location.pathname === '/' && environment.APP_ROOT_PATH) {
+    location.href = environment.APP_ROOT_PATH;
+  }
 }
+
 document.addEventListener('DOMContentLoaded', () => {
   platformBrowserDynamic().bootstrapModule(AppModule);
 });
