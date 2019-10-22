@@ -74,14 +74,14 @@ To create a release and have CI deploy it to the Central Repository, follow thes
 3. Run the following commands to crate the release. If the tests pass on CI, this will deploy the project to OSSRH and automatically release it to the Central Repository:
 
    ```sh
-   NEW_VERSION="v1.2.3"  # Replace with your version number
+   NEW_VERSION="1.2.3"  # Replace with your version number
 
    # Update the version in all POM files
    mvn versions:set -DnewVersion=$NEW_VERSION
 
    # Commit and tag the change
-   git commit -am $NEW_VERSION
-   git tag $NEW_VERSION
+   git commit -am "v${NEW_VERSION}"
+   git tag "v${NEW_VERSION}"
    git push && git push --tags
    ```
 
