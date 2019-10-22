@@ -1,53 +1,39 @@
 #set($hash = '#')
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+${hash} React App
 
-${hash}${hash} Available Scripts
+This project was bootstrapped with [`create-react-app`](https://github.com/facebook/create-react-app).
 
-In the project directory, you can run:
+This application is built to consume the AEM model of a site. It will automatically generate the layout using the helper components from the [`@adobe/cq-react-editable-components`](https://www.npmjs.com/package/@adobe/cq-react-editable-components) package.
+
+${hash}${hash} Scripts
+
+In the project directory, you can run the following commands:
 
 ${hash}${hash}${hash} `npm start`
 
-Runs the app in the development mode by proxying the JSON model from a local AEM instance running at http://localhost:4502.
+Runs the app in development mode by proxying the JSON model from a local AEM instance running at http://localhost:4502. This assumes that the entire project has been deployed to AEM at least once (`mvn clean install -PautoInstallPackage`).
 
-This assumes that the entire project has been deployed to AEM at least once.
+Your app can be viewed on http://localhost:3000/content/${projectName}/en/home.html and the page will reload if you make edits.
 
-1. Open [http://locahost:4502](http://locahost:4502) and login to AEM.
-2. In new tab, open [http://localhost:3000/content/${projectName}/en/home.html](http://localhost:3000/content/${projectName}/en/home.html) to view it in the browser.
+If you are getting errors related to CORS, you might want to configure AEM as follows:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. Navigate to the Configuration Manager (http://localhost:4502/system/console/configMgr)
+2. Open the configuration for "Adobe Granite Cross-Origin Resource Sharing Policy"
+3. Create a new configuration with the following additional values:
+   - Allowed Origins: http://localhost:3000
+   - Supported Headers: Authorization
+   - Allowed Methods: OPTIONS
 
 ${hash}${hash}${hash} `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ${hash}${hash}${hash} `npm run test:debug`
-See the section about [debugging tests](https://facebook.github.io/create-react-app/docs/debugging-tests) for more
-information.
+
+See the section about [debugging tests](https://facebook.github.io/create-react-app/docs/debugging-tests) for more information.
 
 ${hash}${hash}${hash} `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder. It bundles React in production mode and optimizes the build for the best performance. See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-${hash}${hash}${hash} `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-${hash}${hash} Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Furthermore, an AEM ClientLib is generated from the app using the [`aem-clientlib-generator`](https://github.com/wcm-io-frontend/aem-clientlib-generator) package.
