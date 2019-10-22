@@ -1,82 +1,51 @@
-# Initial AEM SPA project template
+# AEM SPA Project
 
-This is a content package for an AEM project set up with the SPA Maven Archetype for AEM (aem-spa-project-archetype).
+**This is a single-page application (SPA) project generated from the [AEM SPA Project Archetype](https://github.com/adobe/aem-spa-project-archetype).**
 
-## Modules of this project:
+## Modules
 
-* [core](core/): OSGi bundle containing:
-  * Java classes (e.g. Sling Models, Servlets, business logic)
-* [ui.apps/src/main/content/jcr_root/apps](ui.apps/src/main/content/jcr_root/apps/):
-  * AEM components with their scripts and dialog definitions
-* [ui.content/src/main/content/jcr_root/conf](ui.content/src/main/content/jcr_root/conf/):
-  * AEM content package with editable templates stored at `/conf`
-* [ui.content/src/main/content/jcr_root/content](content/jcr_root/content/):
-  * AEM content package containing sample content (for development and test purposes)
-* [angular-app](angular-app/): Angular application in case frontend chosen is set to be "angular" at project generation
-* [react-app](react-app/): React application in case frontend chosen is set to be "react" at project generation
-* [all](all/): All-in-One package
+- **[`core`](./core/):** OSGi bundle containing Java classes (e.g. Sling models, servlets, business logic)
+- **[`ui.apps`](./ui.apps):** AEM components with their scripts and dialog definitions
+- **[`ui.content`](./ui.content/):**
+  - [`ui.content/src/main/content/jcr_root/conf`](./ui.content/src/main/content/jcr_root/conf/): AEM content package with editable templates stored at `/conf`
+  - [`ui.content/src/main/content/jcr_root/content`](./ui.content/src/main/content/jcr_root/content/): AEM content package containing sample content (for development purposes)
+- **[`react-app`](./react-app/):** SPA source code
+- **[`all`](./all/):** All-in-one package
 
+## Usage
 
-## Build all modules
+### Requirements
 
-To build all the modules run in the project root directory the following command with Maven:
+- Java 8 or higher
+- Maven 3.5 or higher
 
-    mvn clean install
+### Building modules
 
-### Module build order and installation
+To build all modules, run the following command **in the project root directory**:
 
-The frontend modules builds and transpiles the es6 javascript source code into a browser friendly 2015 version.
-It then creates a client library and copy the built javascript files in the [ui.apps/src/main/content/jcr_root/apps](ui.apps/src/main/content/jcr_root/apps/) module.
-Run your Maven command lines from the root of the project to respect the module build ordering and ensure the latest
-version of the frontend module is used.
+```sh
+mvn clean install
+```
 
-For ease of the build and installation the following profiles are provided in the root:
+For example, to build your SPA and deploy it on a local AEM author instance, you can run:
 
- * ``autoInstallPackage`` - installs the package/bundle to an existing AEM author instance
- * ``autoInstallPackagePublish`` - installs the package/bundle to an existing AEM publish instance
+```sh
+mvn clean install -PautoInstallPackage
+```
 
-### UberJar
+After deploying, you can view the sample content page in your browser: http://localhost:4502/content/editor.html/content/test-spa-react-project/en.html
 
-This project relies on the unobfuscated AEM 6.4 cq-quickstart. This is publicly available on https://repo.adobe.com
+### Maven profiles
 
-For more details about the UberJar please head over to the
-[How to Build AEM Projects using Apache Maven](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/ht-projects-maven.html)
-documentation page.
+- **`autoInstallBundle`**: Installs the `core` bundle with the `maven-sling-plugin` to the Felix console
+- **`autoInstallPackage`**: Installs the `ui.content` and `ui.apps` content packages with the `content-package-maven-plugin` to the package manager of the default author instance.
+- **`autoInstallPackagePublish`**: Installs `ui.content` and `ui.apps` on the default publish instance.
 
-### Install everything
+In the all-in-one package ([`all`](./all/) directory), there are additional profiles for packaging all dependencies into a single content package and installing everything on an existing AEM instance:
 
-In the All-in-One package in [all](all/) there is additional profile available to package all the dependencies into a
-single content package and install everything to an existing AEM
+- **`autoInstallSinglePackage`**: Installs the all-in-one package to an existing AEM author instance
+- **`autoInstallSinglePackagePublish`**: Installs the all-in-one package to an existing AEM publish instance
 
- * ``autoInstallSinglePackage`` - installs the All-in-One package to an existing AEM author instance
- * ``autoInstallSinglePackagePublish`` - installs the All-in-One package to an existing AEM publish instance
+## Documentation
 
-
-    mvn clean install -PautoInstallSinglePackage
-
-You can also choose build environment by using setting `build.environment` property (format: colon + name):
-
-    mvn clean install -PautoInstallSinglePackage -Dbuild.environment=":production"
-
-Available environments:
-
-* empty string (default): non-production / development
-* `production`: production
-
-After deployment you can open the sample content page in your browser:
-
-* Author: http://${aem.host}:${aem.port}${aem.contextPath}/editor.html/content/test-spa-react-project/en.html
-
-## System requirements
-
-* JDK 1.8 or higher
-* Apache Maven 3.5.0 or higher
-* Include the [Adobe Public Maven Repository][adobe-public-maven-repo] in your maven settings
-
-It is recommended to set up the local AEM instances with `nosamplecontent` run mode.
-
-## Maven settings
-
-The project comes with the auto-public repository configured. To setup the repository in your Maven settings, refer to:
-
-    http://helpx.adobe.com/experience-manager/kb/SetUpTheAdobeMavenRepository.html
+- [Framework setup](./react-app/README.md)

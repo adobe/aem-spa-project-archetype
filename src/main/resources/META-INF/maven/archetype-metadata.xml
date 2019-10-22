@@ -116,13 +116,14 @@
         <!-- `projectTitle`: Descriptive project name (e.g. `My App`) -->
         <requiredProperty key="projectTitle" />
 
-        <!-- `projectName`: Used for building AEM apps path, content path, conf,
-            etc. (e.g. `myapp`) -->
+        <!-- `projectName`: Technical project name, used for building AEM paths
+            (like `/content/${projectName}/en`, e.g. `myapp`) -->
         <requiredProperty key="projectName">
             <validationRegex>^[a-zA-Z0-9\_]+$</validationRegex>
         </requiredProperty>
 
-        <!-- groupId: Maven artifact groupId for all projects (e.g.
+        <!-- `groupId`: ID which uniquely identifies your group and project,
+            should start with a reversed domain name you control (e.g.
             `com.mycompany`) -->
         <requiredProperty key="groupId">
             <validationRegex>^[a-zA-Z0-9\.\-_]+$</validationRegex>
