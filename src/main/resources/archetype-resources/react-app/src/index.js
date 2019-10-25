@@ -14,6 +14,12 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+// Polyfills for modern language features. The imports and dependency can be
+// removed if only modern browsers should be supported
+import 'custom-event-polyfill';
+import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/stable';
+
 import { Constants, ModelManager } from '@adobe/cq-spa-page-model-manager';
 import { createBrowserHistory } from 'history';
 import React from 'react';

@@ -272,8 +272,6 @@
                         <exclude>**/*.html</exclude>
                         <!-- Exclude all .editorconfig files -->
                         <exclude>**/*.editorconfig</exclude>
-                        <!-- Exclude all browserslist files -->
-                        <exclude>**/*browserslist</exclude>
                         <!-- Exclude all .properties files -->
                         <exclude>**/*.properties</exclude>
                         <!-- Ignore .vltignore files -->

@@ -31,12 +31,14 @@
     "angular-in-memory-web-api": "^0.8.0",
     "chart.js": "^2.8.0",
     "core-js": "^3.1.4",
+    "custom-event-polyfill": "^1.0.7",
     "node-fetch": "^2.6.0",
     "npm": "^6.10.2",
     "request": "^2.87.0",
     "rxjs": "^6.5.2",
     "ts-loader": "^6.0.4",
     "tslib": "^1.10.0",
+    "whatwg-fetch": "^3.0.0",
     "xhr2": "^0.2.0",
     "zone.js": "~0.9.1"
   },
@@ -70,5 +72,8 @@
     "tslint": "^5.18.0",
     "typescript": "~3.4.0",
     "webpack-cli": "^3.3.6"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }

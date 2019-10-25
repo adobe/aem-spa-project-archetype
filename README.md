@@ -59,6 +59,10 @@ mvn archetype:generate \
   -DarchetypeVersion=2.0.1-SNAPSHOT
 ```
 
+## Docs
+
+- [Browser support](./docs/browser-support.md)
+
 ### Contributing
 
 Contributions are welcome! Read the [Contributing Guide](CONTRIBUTING.md) for more information.
