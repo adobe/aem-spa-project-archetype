@@ -44,6 +44,12 @@
     <frontend-maven-plugin.version>1.6</frontend-maven-plugin.version>
     <node.version>v10.16.0</node.version>
     <npm.version>6.9.0</npm.version>
+
+    <!--
+      Environment for the NPM build. Possible values:
+      - "" in development (=> `npm run build`)
+      - ":production" in production (=> `npm run build:production`)
+    -->
     <build.environment />
   </properties>
 
@@ -91,6 +97,7 @@
               <goal>npm</goal>
             </goals>
             <configuration>
+              <!-- Create development/production build -->
               <arguments>run build${build.environment}</arguments>
             </configuration>
           </execution>
@@ -100,6 +107,28 @@
   </build>
 
   <profiles>
+    <!-- Create Angular production build when using a publish profile -->
+    <profile>
+      <id>autoInstallPackagePublish</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <!-- Use `build:production` instead of `build` NPM script -->
+        <build.environment>:production</build.environment>
+      </properties>
+    </profile>
+    <profile>
+      <id>autoInstallSinglePackagePublish</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <!-- Use `build:production` instead of `build` NPM script -->
+        <build.environment>:production</build.environment>
+      </properties>
+    </profile>
+
     <!-- Profile to run locally -->
     <profile>
       <id>local</id>
