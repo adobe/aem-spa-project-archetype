@@ -13,32 +13,57 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+const path = require('path');
+
+const BUILD_DIR = path.join(__dirname, 'dist', 'browser');
+const CLIENTLIB_DIR = path.join(
+  __dirname,
+  '..',
+  'ui.apps',
+  'src',
+  'main',
+  'content',
+  'jcr_root',
+  'apps',
+  '${projectName}',
+  'clientlibs'
+);
+
+// Globs for entrypoint files (in the order they need to be required)
+const jsEntrypoints = [
+  '**/runtime*.js',
+  '**/polyfills*.js',
+  '**/styles*.js',
+  '**/vendor*.js',
+  '**/main*.js'
+];
+const cssEntrypoints = ['**/*.css'];
+
+// Config for `aem-clientlib-generator`
 module.exports = {
-    // default working directory (can be changed per 'cwd' in every asset option)
-    context: __dirname,
+  context: BUILD_DIR,
+  clientLibRoot: CLIENTLIB_DIR,
+  libs: {
+    name: '${projectName}-${optionFrontend}',
+    allowProxy: true,
+    categories: ['${projectName}-${optionFrontend}'],
+    embed: ['${projectName}.responsivegrid'],
+    jsProcessor: ['default:none', 'min:none'],
+    serializationFormat: 'xml',
+    assets: {
+      // Copy entrypoint scripts and stylesheets into the respective ClientLib directories (in the order they are in the
+      // entrypoints arrays)
+      js: jsEntrypoints,
+      css: cssEntrypoints,
 
-    // path to the clientlib root folder (output)
-    clientLibRoot: "./../ui.apps/src/main/content/jcr_root/apps/${projectName}/clientlibs",
-
-    libs: {
-        name: "${projectName}-${optionFrontend}",
-        allowProxy: true,
-        categories: ["${projectName}-${optionFrontend}"],
-        embed: ["${projectName}.responsivegrid"],
-        jsProcessor: ['default:none', 'min:none'],
-        serializationFormat: "xml",
-        assets: {
-            js: [
-                "dist/browser/**/runtime*.js",
-                "dist/browser/**/polyfills*.js",
-                "dist/browser/**/styles*.js",
-                "dist/browser/**/vendor*.js",
-                "dist/browser/**/main*.js",
-                "dist/browser/**/*.map"
-            ],
-            css: [
-                "dist/browser/**/*.css"
-            ]
-        }
+      // Copy all other files into the `resources` ClientLib directory
+      resources: {
+        cwd: '.',
+        flatten: false,
+        files: ['**/*.*'],
+        ignore: [...jsEntrypoints, ...cssEntrypoints]
+      }
     }
+  }
 };

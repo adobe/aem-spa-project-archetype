@@ -2,6 +2,7 @@
   "name": "angular-app",
   "version": "1.1.0",
   "private": true,
+  "homepage": "/etc.clientlibs/test-spa-angular-project/clientlibs/test-spa-angular-project-angular/resources",
   "scripts": {
     "start": "ng serve --open --proxy-config ./proxy.aem.conf.json",
     "build": "ng build && clientlib",
@@ -49,7 +50,7 @@
     "@types/jasmine": "~3.3.16",
     "@types/jasminewd2": "^2.0.6",
     "@types/node": "^12.6.8",
-    "aem-clientlib-generator": "^1.4.3",
+    "aem-clientlib-generator": "^1.5.0",
     "body-parser": "^1.19.0",
     "codelyzer": "^5.0.1",
     "jasmine-core": "^3.4.0",

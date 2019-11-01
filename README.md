@@ -62,7 +62,9 @@ mvn archetype:generate \
 
 ## Docs
 
+- [SPA ClientLib](./docs/spa-clientlib.md)
 - [Browser support](./docs/browser-support.md)
+- [Code Splitting](./docs/code-splitting.md)
 
 ### Contributing
 
