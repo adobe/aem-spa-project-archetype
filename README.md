@@ -46,10 +46,11 @@ To make modifications to this archetype and use it locally, follow these steps:
 
 1. Clone the repository: `git clone REPO_URL`
 2. Navigate into the project directory: `cd aem-spa-project-archetype`
-3. Add the archetype to the local archetype catalog: `mvn clean install archetype:update-local-catalog`
-4. Navigate into a different directory where you want to generate a project from the archetype
-5. Update the list of locally available archetypes: `mvn archetype:crawl`
-6. Generate a project from the local archetype:
+3. Switch to the `development` branch: `git checkout development`
+4. Add the archetype to the local archetype catalog: `mvn clean install archetype:update-local-catalog`
+5. Navigate into a different directory where you want to generate a project from the archetype
+6. Update the list of locally available archetypes: `mvn archetype:crawl`
+7. Generate a project from the local archetype:
 
 ```sh
 mvn archetype:generate \
