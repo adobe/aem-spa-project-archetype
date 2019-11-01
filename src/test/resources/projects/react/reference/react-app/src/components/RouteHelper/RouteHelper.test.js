@@ -16,7 +16,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Route } from "react-router";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import renderer from "react-test-renderer";
 import { withRoute, CompositeComponent } from "./";
 
@@ -183,6 +183,18 @@ const PATH_AND_PROPS_INLINE_SNAPSHOT = `
             const result = renderer.getRenderOutput();
 
             expect(result).toMatchInlineSnapshot(PATH_AND_PROPS_INLINE_SNAPSHOT);
+        });
+
+        it("should render page without extension", () => {
+            let WrappedComponent = withRoute(RouteContent);
+            ReactDOM.render(
+                <MemoryRouter initialEntries={[CUSTOM_ROUTE_PATH]}>
+                    <WrappedComponent cqPath={CUSTOM_ROUTE_PATH} />
+                </MemoryRouter>,
+                rootNode
+            );
+
+            expect(rootNode.querySelector('.' + ROUTE_CONTENT_CLASS_NAME)).toBeTruthy();
         });
 
         it("should encapsulate and hide the wrapped component in a route", () => {
