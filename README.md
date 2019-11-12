@@ -78,7 +78,7 @@ To create a release and have CI deploy it to the Central Repository, follow thes
 
 2. Update the `archetype:generate` commands in this `README` file with the new version number (so users install the latest version of the archetype)
 
-3. Run the following commands to crate the release. If the tests pass on CI, this will deploy the project to OSSRH and automatically release it to the Central Repository:
+3. Run the following commands to create the release. If the tests pass on CI, this will deploy the project to OSSRH and automatically release it to the Central Repository:
 
    ```sh
    NEW_VERSION="1.2.3"  # Replace with your version number
