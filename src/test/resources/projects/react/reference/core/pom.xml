@@ -178,7 +178,7 @@
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
+            <artifactId>servlet-api</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.jcr</groupId>
@@ -234,8 +234,8 @@
         </dependency>
         <dependency>
             <groupId>com.adobe.cq</groupId>
-            <artifactId>core.wcm.components.core</artifactId>
-            <version>2.2.2</version>
+            <artifactId>core.wcm.components.all</artifactId>
+            <type>zip</type>
         </dependency>
         <!-- TODO: CQ-4243301 remove after the backport of the API and its inclusion in the Uber-Jar  -->
         <dependency>
@@ -254,7 +254,6 @@
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.junit.core</artifactId>
             <scope>test</scope>
-            <version>2.2.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>

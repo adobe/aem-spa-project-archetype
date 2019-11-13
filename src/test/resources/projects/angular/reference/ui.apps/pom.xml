@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!--
 | Copyright 2018 Adobe Incorporated
 |
@@ -49,9 +49,9 @@
     <!-- ====================================================================== -->
     <build>
         <resources>
-        <!-- define the resources that will go into the package -->
-        <resource>
-            <directory>${basedir}/src/main/content/jcr_root</directory>
+            <!-- define the resources that will go into the package -->
+            <resource>
+                <directory>${basedir}/src/main/content/jcr_root</directory>
                 <excludes>
                     <exclude>**/.vlt</exclude>
                     <exclude>**/.vltignore</exclude>
@@ -118,7 +118,6 @@
             <plugin>
                 <groupId>com.day.jcr.vault</groupId>
                 <artifactId>content-package-maven-plugin</artifactId>
-                <extensions>true</extensions>
                 <configuration>
                     <group>${vault.package.group}</group>
                     <requiresRoot>true</requiresRoot>
@@ -206,41 +205,38 @@
     <!-- ====================================================================== -->
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.adobe.spa.test.projects</groupId>
-                <artifactId>test-spa-angular.core</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-            </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>com.adobe.spa.test.projects</groupId>
+            <artifactId>test-spa-angular.core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
 
-            <dependency>
-                <groupId>com.adobe.aem</groupId>
-                <artifactId>uber-jar</artifactId>
-                <classifier>apis</classifier>
-            </dependency>
+        <dependency>
+            <groupId>com.adobe.aem</groupId>
+            <artifactId>uber-jar</artifactId>
+            <classifier>apis</classifier>
+        </dependency>
 
-            <dependency>
-                <groupId>com.adobe.cq</groupId>
-                <artifactId>core.wcm.components.all</artifactId>
-                <type>zip</type>
-            </dependency>
+        <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>core.wcm.components.all</artifactId>
+            <type>zip</type>
+        </dependency>
 
-            <dependency>
-                <groupId>javax.jcr</groupId>
-                <artifactId>jcr</artifactId>
-            </dependency>
+        <dependency>
+            <groupId>javax.jcr</groupId>
+            <artifactId>jcr</artifactId>
+        </dependency>
 
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>servlet-api</artifactId>
-            </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
 
-            <dependency>
-                <groupId>com.day.cq.wcm</groupId>
-                <artifactId>cq-wcm-taglib</artifactId>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
+        <dependency>
+            <groupId>com.day.cq.wcm</groupId>
+            <artifactId>cq-wcm-taglib</artifactId>
+        </dependency>
+    </dependencies>
 </project>

@@ -40,9 +40,6 @@
         <fileSet filtered="true" packaged="true">
             <directory>core/src/test/java</directory>
         </fileSet>
-        <fileSet filtered="true" packaged="false">
-            <directory>core/src/test/resources</directory>
-        </fileSet>
 
         <fileSet filtered="true" packaged="false">
             <directory>all</directory>

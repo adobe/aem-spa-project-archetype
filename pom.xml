@@ -286,6 +286,8 @@
                         <exclude>**/*.rej</exclude>
                         <!-- Jenkins configuration file -->
                         <exclude>Jenkinsfile</exclude>
+                        <!-- .gitkeep files (for keeping the directory structure) -->
+                        <exclude>**/.gitkeep</exclude>
                     </excludes>
                 </configuration>
                 <executions>

@@ -66,6 +66,7 @@
         <vault.user>admin</vault.user>
         <vault.password>admin</vault.password>
 
+        <core.wcm.components.version>2.7.0</core.wcm.components.version>
         <slf4j.version>1.7.6</slf4j.version>
     </properties>
 
@@ -696,19 +697,24 @@
                 <groupId>com.adobe.cq</groupId>
                 <artifactId>core.wcm.components.all</artifactId>
                 <type>zip</type>
-                <version>2.2.2</version>
-                <scope>provided</scope>
+                <version>${core.wcm.components.version}</version>
             </dependency>
 
             <!-- Servlet API -->
             <dependency>
                 <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
+                <artifactId>servlet-api</artifactId>
+                <version>2.5</version>
                 <scope>provided</scope>
             </dependency>
 
             <!-- Testing -->
+            <dependency>
+                <groupId>com.adobe.cq</groupId>
+                <artifactId>core.wcm.components.junit.core</artifactId>
+                <version>${core.wcm.components.version}</version>
+                <scope>provided</scope>
+            </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
