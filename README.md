@@ -10,6 +10,7 @@ See the [WKND Events Tutorial](https://helpx.adobe.com/experience-manager/kt/sit
 
 - Java 8 or higher
 - Maven 3.5 or higher
+- AEM 6.4.7+ or 6.5.3+
 
 ### Generating a project
 

@@ -19,6 +19,7 @@ ${hash}${hash}${hash} Requirements
 
 - Java 8 or higher
 - Maven 3.5 or higher
+- AEM 6.4.7+ or 6.5.3+
 
 ${hash}${hash}${hash} Building modules
 
