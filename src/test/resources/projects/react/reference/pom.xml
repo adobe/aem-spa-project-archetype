@@ -68,6 +68,7 @@
 
         <core.wcm.components.version>2.7.0</core.wcm.components.version>
         <slf4j.version>1.7.6</slf4j.version>
+        <spa.project.core.version>1.0.4</spa.project.core.version>
     </properties>
 
     <!-- ====================================================================== -->
@@ -544,6 +545,19 @@
     <!-- ====================================================================== -->
     <dependencyManagement>
         <dependencies>
+            <!-- SPA Project Core (includes Page model) -->
+            <dependency>
+                <groupId>com.adobe.aem</groupId>
+                <artifactId>spa.project.core.all</artifactId>
+                <type>zip</type>
+                <version>${spa.project.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.aem</groupId>
+                <artifactId>spa.project.core.core</artifactId>
+                <version>${spa.project.core.version}</version>
+            </dependency>
+
             <!-- Commons -->
             <dependency>
                 <groupId>javax.annotation</groupId>

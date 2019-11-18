@@ -3,5 +3,5 @@
     jcr:primaryType="cq:Component"
     jcr:title="Page Component (Test SPA Angular Project)"
     jcr:description="Test SPA Angular Project Page"
-    sling:resourceSuperType="core/wcm/components/page/v2/page"
+    sling:resourceSuperType="spa-project-core/components/page"
     componentGroup=".hidden"/>

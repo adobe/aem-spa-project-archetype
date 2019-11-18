@@ -61,7 +61,12 @@
                         <embedded>
                             <groupId>com.adobe.spa.test.projects</groupId>
                             <artifactId>test-spa-angular.core</artifactId>
-                            <filter>true</filter>
+                            <target>/apps/test-spa-angular-project/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>com.adobe.aem</groupId>
+                            <artifactId>spa.project.core.core</artifactId>
+                            <target>/apps/test-spa-angular-project/install</target>
                         </embedded>
                     </embeddeds>
                     <subPackages>
@@ -73,6 +78,16 @@
                         <subPackage>
                             <groupId>com.adobe.spa.test.projects</groupId>
                             <artifactId>test-spa-angular.ui.content</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
+                        <subPackage>
+                            <groupId>com.adobe.aem</groupId>
+                            <artifactId>spa.project.core.all</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
+                        <subPackage>
+                            <groupId>com.adobe.cq</groupId>
+                            <artifactId>core.wcm.components.all</artifactId>
                             <filter>true</filter>
                         </subPackage>
                     </subPackages>
@@ -143,6 +158,17 @@
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
     <dependencies>
+        <!-- SPA Project Core (includes Page model) -->
+        <dependency>
+            <groupId>com.adobe.aem</groupId>
+            <artifactId>spa.project.core.all</artifactId>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.aem</groupId>
+            <artifactId>spa.project.core.core</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.adobe.spa.test.projects</groupId>
             <artifactId>test-spa-angular.core</artifactId>
