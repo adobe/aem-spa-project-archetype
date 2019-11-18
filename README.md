@@ -21,7 +21,7 @@ mvn archetype:generate \
   -DarchetypeCatalog=remote \
   -DarchetypeGroupId=com.adobe.cq.spa.archetypes \
   -DarchetypeArtifactId=aem-spa-project-archetype \
-  -DarchetypeVersion=3.0.0
+  -DarchetypeVersion=4.0.0
 ```
 
 Maven will prompt you for the following parameters:
@@ -58,7 +58,7 @@ mvn archetype:generate \
   -DarchetypeCatalog=local \
   -DarchetypeGroupId=com.adobe.cq.spa.archetypes \
   -DarchetypeArtifactId=aem-spa-project-archetype \
-  -DarchetypeVersion=3.0.1-SNAPSHOT
+  -DarchetypeVersion=4.0.1-SNAPSHOT
 ```
 
 ## Docs
