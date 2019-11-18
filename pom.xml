@@ -24,7 +24,7 @@
     <!-- ====================================================================== -->
     <groupId>com.adobe.cq.spa.archetypes</groupId>
     <artifactId>aem-spa-project-archetype</artifactId>
-    <version>4.0.0</version>
+    <version>4.0.1-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>SPA Maven Archetype for AEM</name>
