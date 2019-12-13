@@ -1,6 +1,12 @@
 # AEM SPA Project Archetype
 
-**This archetype creates a minimal Adobe Experience Manager project as a starting point for your own SPA project.**
+---
+
+**IMPORTANT:** The SPA archetype has been merged into the [AEM Project Archetype](https://github.com/adobe/aem-project-archetype). This repository is no longer maintained.
+
+---
+
+This archetype creates a minimal Adobe Experience Manager project as a starting point for your own SPA project.
 
 See the [WKND Events Tutorial](https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-spa-wknd-tutorial-develop.html) on the Adobe Help Center website for an example of how to use it.
 
