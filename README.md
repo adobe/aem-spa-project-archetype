@@ -1,3 +1,9 @@
+---
+
+**IMPORTANT:** The SPA archetype has been merged into the [AEM Project Archetype](https://github.com/adobe/aem-project-archetype). This repository is no longer maintained.
+
+---
+
 # AEM SPA Project Archetype
 
 This archetype creates a minimal Adobe Experience Manager project as a starting point for your own SPA project.
